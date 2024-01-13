@@ -4,11 +4,17 @@
 
 // Path: app/stores/index.js
 import { defineStore } from "pinia";
-
+import  platform  from  "platform";
 
 function getRandomItem(array) {
     const randomIndex = Math.floor(Math.random() * array.length);
     return array[randomIndex];
+}
+
+function determineOS() {
+  if (platform.os.family == "Mac") return 'MacOS';
+  if (platform.os.family == "Win32") return 'Windows';
+  return 'Linux';
 }
 
 const useQuotesStore = defineStore("quotes", {
@@ -100,7 +106,23 @@ const useEmojisStore = defineStore("emojis", {
 });
 
 
+const useOsStore = defineStore('os', {
+  state: () => ({
+    os: determineOS(),
+  }),
+  getters: {
+    shortcutSymbol: (state) => {
+      if (state.os === 'MacOS') {
+        return '⌘';
+      }
+      return 'Ctrl';
+    }
+  }
+});
+
+
 export { 
+    useOsStore,
     useQuotesStore, 
     useImagesStore, 
     useEmojisStore 

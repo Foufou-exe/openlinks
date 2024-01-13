@@ -37,14 +37,14 @@ export default defineNuxtConfig({
   app: {
     // Config HEAD
     head: {
-      title: 'Devhub',
+      title: 'Openlinks',
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Devhub - A place for developers to share ideas and learn new things'
+          content: 'Openlinks - Openlinks is a project designed to bring together new articles, shared links and much more. The aim is to simplify communications between all types of people.'
         }
       ],
       link: [

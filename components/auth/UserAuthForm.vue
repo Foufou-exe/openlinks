@@ -1,5 +1,5 @@
 <template>
-  <Tabs default-value="login" class="w-full max-w-md mx-auto">
+  <Tabs default-value="register" class="w-full max-w-md mx-auto">
     <TabsList class="grid w-full grid-cols-2">
       <TabsTrigger value="login">
         Login
@@ -12,20 +12,20 @@
       <Card>
         <CardHeader>
           <CardTitle class="text-3xl flex justify-center mb-2">
-            Login to Devhub ✨
+            Login to Openlinks ✨
           </CardTitle>
           <CardDescription>
-            Connect to your Devhub account either via your Github or Google account or via your email and password.
+            Connect to your openlinks account either via your Github or Google account or via your email and password.
           </CardDescription>
         </CardHeader>
         <CardContent class="space-y-2">
           <div class="space-y-1">
             <Label for="email">Email :</Label>
-            <Input id="email" placeholder="exemple@devhub.com" icon="circum:mail" type="email" />
+            <Input id="email" placeholder="exemple@openlinks.com" icon="circum:mail" type="email" />
           </div>
           <div class="space-y-1">
             <Label for="password">Password :</Label>
-            <Input id="password" type="password" />
+            <Input id="password" type="password" placeholder="*****************"/>
           </div>
         </CardContent>
         <CardFooter class="flex justify-between">
@@ -33,17 +33,15 @@
             <Icon name="circum:login" class="mr-2 text-xl" />
             Login
           </Button>
-          <a href="/auth/reset/resetPasswordRequest" class="underline">
+          <a href="/auth/reset/requestReset" class="underline">
             Forgot your password ?
           </a>
         </CardFooter>
         <div class="space-y-4">
           <div class="relative flex justify-center text-xs uppercase">
-            <Separator class="w-[150px]"/>
             <span class="bg-background px-2 text-muted-foreground">
               Or continue with
             </span>
-            <Separator class="w-[150px]"/>
           </div>
           <div class="flex flex-col justify-center space-y-2 p-2">
             <Button variant="outline" type="button">
@@ -65,7 +63,7 @@
             Create an Account ✨
           </CardTitle>
           <CardDescription>
-            Create your account Devhub account either via your Github or Google account or via your email and password.
+            Create your account openlinks account either via your Github or Google account or via your email and password.
           </CardDescription>
         </CardHeader>
         <CardContent  class="space-y-3">
@@ -73,7 +71,7 @@
             <FormItem>
               <FormLabel>Username :</FormLabel>
               <FormControl>
-                <Input type="text" placeholder="devhub" v-bind="componentField" />
+                <Input type="text" placeholder="openlinks" v-bind="componentField" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -82,7 +80,7 @@
             <FormItem>
               <FormLabel>Email : </FormLabel>
               <FormControl>
-                <Input type="email" placeholder="exemple@devhub.com" v-bind="componentField"/>
+                <Input type="email" placeholder="exemple@openlinks.com" v-bind="componentField"/>
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -91,7 +89,7 @@
             <FormItem>
               <FormLabel>Password : </FormLabel>
               <FormControl>
-                <Input type="password" placeholder="*********" v-bind="componentField" />
+                <Input type="password" placeholder="*****************" v-bind="componentField" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -103,11 +101,9 @@
         </CardContent>
         <div>
           <div class="relative flex justify-center text-xs uppercase">
-            <Separator class="w-[150px]"/>
             <span class="text-muted-foreground">
               Or create with
             </span>
-            <Separator class="w-[150px]"/>
           </div>
           <div class="flex flex-col justify-center space-y-2 p-2">
             <Button variant="outline" type="button">
@@ -147,8 +143,8 @@ const { handleSubmit } = useForm({
 const onSubmit = handleSubmit((values) => {
   console.log(values)
   toast({
-    title: 'You submitted the following values:',
-    description: 'Username: ' + values.username + ' Email: ' + values.email + ' Password: ' + values.password,
+    title: 'Success !',
+    description: '👋 Welcome to Openlinks'
   })
 })
 </script>

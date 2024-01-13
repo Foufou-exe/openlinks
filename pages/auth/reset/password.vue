@@ -1,29 +1,29 @@
 <template>
     <div class="flex h-screen items-center justify-center">
         <div>
-            <Card class="p-5 shadow-2xl">
+            <Card>
                 <CardHeader>
                     <CardTitle class="text-3xl flex justify-center mb-2">
-                        Password reset Request🎈
+                        Reset Password 🎉
                     </CardTitle>
                     <CardDescription>
-                        Enter your email address to receive a password reset link.
+                        Change your password and confirm it.
                     </CardDescription>
                 </CardHeader>
                 <CardContent class="space-y-2">
                     <div class="space-y-1">
-                        <Label for="email" >Email :</Label>
-                        <Input id="email" type="email" required/>
+                        <Label for="password">Password :</Label>
+                        <Input id="password" />
+                    </div>
+                    <div class="space-y-1">
+                        <Label for="retype-password">Retype password :</Label>
+                        <Input id="retype-password" type="password" />
                     </div>
                 </CardContent>
                 <CardFooter class="flex justify-between">
-                    <Button type="button" variant="secondary">
-                        <Icon name="circum:paperplane" class="mr-2 text-xl" />
-                        Sending the request
-                    </Button>
-                    <Button type="button" @click="$router.go(-1)">
-                        &lt;
-                        Back
+                    <Button>
+                        <Icon name="circum:circle-check" class="mr-2 text-xl" />
+                        Validate reset password
                     </Button>
                 </CardFooter>
             </Card>
@@ -37,11 +37,11 @@ definePageMeta({
 })
 
 useHead({
-    title: 'Devhub - Password Reset request ',
+    title: 'Openlinks - Reset password',
     meta: [
         {
             name: 'description',
-            content: 'Password reset request',
+            content: 'Reset your password',
         },
     ],
 });

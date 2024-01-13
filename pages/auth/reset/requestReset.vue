@@ -1,29 +1,29 @@
 <template>
     <div class="flex h-screen items-center justify-center">
         <div>
-            <Card>
+            <Card class="p-5 shadow-2xl">
                 <CardHeader>
                     <CardTitle class="text-3xl flex justify-center mb-2">
-                        Reset Password 🎉
+                        Password reset Request🎈
                     </CardTitle>
                     <CardDescription>
-                        Change your password and confirm it.
+                        Enter your email address to receive a password reset link.
                     </CardDescription>
                 </CardHeader>
                 <CardContent class="space-y-2">
                     <div class="space-y-1">
-                        <Label for="password">Password :</Label>
-                        <Input id="password" />
-                    </div>
-                    <div class="space-y-1">
-                        <Label for="retype-password">Retype password :</Label>
-                        <Input id="retype-password" type="password" />
+                        <Label for="email" >Email :</Label>
+                        <Input id="email" type="email" required placeholder="exemple@openlinks.com"/>
                     </div>
                 </CardContent>
                 <CardFooter class="flex justify-between">
-                    <Button>
-                        <Icon name="circum:circle-check" class="mr-2 text-xl" />
-                        Validate reset password
+                    <Button type="button" variant="secondary">
+                        <Icon name="circum:paperplane" class="mr-2 text-xl" />
+                        Sending the request
+                    </Button>
+                    <Button type="button" @click="$router.go(-1)">
+                        &lt;
+                        Back
                     </Button>
                 </CardFooter>
             </Card>
@@ -37,11 +37,11 @@ definePageMeta({
 })
 
 useHead({
-    title: 'Devhub - Reset password',
+    title: 'Openlinks - Password Reset request ',
     meta: [
         {
             name: 'description',
-            content: 'Reset your password',
+            content: 'Password reset request',
         },
     ],
 });
