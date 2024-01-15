@@ -1,10 +1,11 @@
 <template>
-    <div class="flex  min-h-screen">
-
-    </div>
+    <MaintenceSite />
 </template>
 
-<script setup lang="ts">
+<script setup >
+// Imported if the site is under maintenance
+import MaintenceSite from '@/components/MaintenceSite.vue'
+
 useSeoMeta({
     title: 'Openlinks',
     ogTitle: 'Openlinks',
@@ -22,5 +23,10 @@ useHead({
     htmlAttrs: {
         lang: 'en',
     },
+})
+
+// Activated if the site is under maintenance
+definePageMeta({
+  layout: 'none',
 })
 </script>
