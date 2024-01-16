@@ -1,7 +1,7 @@
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
-      <Button variant="ghost" class="">
+      <Button variant="ghost" class="sm:flex md:flex lg:hidden">
         <Icon name="circum:menu-kebab" class="text-xl" />
       </Button>
     </DropdownMenuTrigger>
@@ -23,7 +23,7 @@
             <span>About</span>
           </a>
           <DropdownMenuShortcut>
-            Ctrl⇧A
+            Ctrl+Alt+A
           </DropdownMenuShortcut>
         </DropdownMenuItem>
         <DropdownMenuItem>
@@ -32,7 +32,7 @@
             <span>Why use Openlinks ?</span>
           </a>
           <DropdownMenuShortcut>
-            Ctrl⇧A
+            Ctrl+Alt+Q
           </DropdownMenuShortcut>
         </DropdownMenuItem>
         <DropdownMenuItem>
@@ -41,7 +41,7 @@
             <span>Security</span>
           </a>
           <DropdownMenuShortcut>
-            Ctrl⇧A
+            Ctrl+Alt+O
           </DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuGroup>
@@ -50,6 +50,34 @@
         <DropdownMenuLabel>
           <h3 class="md:text-base lg:text-base sm:text-sm font-medium">✨Features</h3>
         </DropdownMenuLabel>
+
+        <DropdownMenuItem>
+          <a href="/faq" class="flex items-center justify-center space-x-1 mr-2">
+            <Icon name="circum:square-question" class="text-lg" />
+            <span>Feature 1</span>
+          </a>
+          <DropdownMenuShortcut>
+            Ctrl+Alt+F
+          </DropdownMenuShortcut>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <a href="/faq" class="flex items-center justify-center space-x-1 mr-2">
+            <Icon name="circum:square-question" class="text-lg" />
+            <span>Feature 1</span>
+          </a>
+          <DropdownMenuShortcut>
+            Ctrl+Alt+F
+          </DropdownMenuShortcut>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <a href="/faq" class="flex items-center justify-center space-x-1 mr-2">
+            <Icon name="circum:square-question" class="text-lg" />
+            <span>Feature 1</span>
+          </a>
+          <DropdownMenuShortcut>
+            Ctrl+Alt+F
+          </DropdownMenuShortcut>
+        </DropdownMenuItem>
       </DropdownMenuGroup>
       <DropdownMenuSeparator />
       <DropdownMenuGroup>
