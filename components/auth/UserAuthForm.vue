@@ -11,7 +11,7 @@
     <TabsContent value="login">
       <Card>
         <CardHeader>
-          <CardTitle class="text-3xl flex justify-center mb-2">
+          <CardTitle class="lg:text-3xl md:text-2xl sm:text-2xl flex justify-center mb-2">
             Login to Openlinks ✨
           </CardTitle>
           <CardDescription>
@@ -28,12 +28,12 @@
             <Input id="password" type="password" placeholder="*****************"/>
           </div>
         </CardContent>
-        <CardFooter class="flex justify-between">
+        <CardFooter class="flex flex-col sm:flex-row justify-between">
           <Button>
             <Icon name="circum:login" class="mr-2 text-xl" />
             Login
           </Button>
-          <a href="/auth/reset/requestReset" class="underline">
+          <a href="/auth/reset/requestReset" class="underline mt-2 sm:mt-0">
             Forgot your password ?
           </a>
         </CardFooter>

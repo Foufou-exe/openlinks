@@ -2,7 +2,7 @@
   <TooltipProvider>
     <Tooltip>
       <TooltipTrigger as-child>
-        <Button @click="toggleTheme" variant="z">
+        <Button @click="toggleTheme" variant="z" :class="colorMode.preference === 'dark' ? 'theme-light' : 'theme-dark' ">
           <Icon :name="currentThemeIcon" class="text-2xl" />
         </Button>
       </TooltipTrigger>

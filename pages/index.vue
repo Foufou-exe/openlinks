@@ -1,10 +1,26 @@
 <template>
-    <MaintenceSite />
+    <!-- <MaintenceSite /> -->
+    <div class="flex min-h-screen flex-col">
+        <section id="about" class="min-h-screen flex">
+            <SectionAbout />
+        </section>
+        <section id="why" class="min-h-screen">
+            <SectionWhy />
+        </section>
+        <section id="security" class="min-h-screen">
+            <SectionSecurity />
+        </section>
+    </div>
 </template>
 
 <script setup >
 // Imported if the site is under maintenance
-import MaintenceSite from '@/components/MaintenceSite.vue'
+// import MaintenceSite from '@/components/MaintenceSite.vue'
+
+import SectionAbout  from "@/components/default/SectionAbout.vue";
+import SectionSecurity from "@/components/default/SectionSecurity.vue";
+import SectionWhy from "@/components/default/SectionWhy.vue";
+
 
 useSeoMeta({
     title: 'Openlinks',
@@ -26,7 +42,7 @@ useHead({
 })
 
 // Activated if the site is under maintenance
-definePageMeta({
-  layout: 'none',
-})
+// definePageMeta({
+//   layout: 'none',
+// })
 </script>

@@ -1,8 +1,6 @@
 <template>
-  <div
-    class="container relative hidden h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
-    <div class="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
-      <!-- <div class="absolute inset-0 bg-cover" :class="imagesStore.currentImage"  /> -->
+  <div class="container relative flex h-screen flex-col items-center justify-center md:grid md:grid-cols-1 lg:max-w-none lg:grid-cols-2 lg:px-0">
+    <div class="relative hidden lg:h-full lg:flex-col bg-muted p-10 text-white dark:border-r lg:flex">
       <NuxtImg :src="imagesStore.currentImage" class="absolute inset-0 object-cover w-full h-full" />
       <div class="relative z-20">
         <LinkLogo />
@@ -18,10 +16,8 @@
         </blockquote>
       </div>
     </div>
-    <div class="space-y-2">
-      <div class="flex justify-center items-center">
-        <UserAuthForm />
-      </div>
+    <div class="space-y-2 flex flex-col justify-center items-center">
+      <UserAuthForm />
     </div>
   </div>
 </template>

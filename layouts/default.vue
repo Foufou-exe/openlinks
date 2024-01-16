@@ -1,61 +1,70 @@
 <template>
     <nav class="flex justify-between p-2">
-        <div>
-            <LinkLogo/>
+        <div class="flex space-x-2 p-1 justify-center items-center max-sm:bg-muted md:bg-muted lg:bg-transparent rounded-lg">
+          <ButtonDropdown/>
+          <LinkLogo class="max-sm:hidden md:hidden lg:flex"/>
         </div>
-        <div>
-            <div class="flex space-x-1 bg-muted rounded-lg justify-center items-center p-1">
-                <MenuNav/>
-            </div>
+        <div class="hidden lg:flex space-x-1 bg-muted rounded-lg justify-center items-center p-1">
+          <MenuNav/>
         </div>
         <div class="flex space-x-1 bg-muted rounded-lg justify-center items-center p-1">
             <ButtonSearch/>
             <ButtonThemeNav/>
-            <ButtonGithub/>
+            <ButtonGithub />
             <ButtonLogin />
         </div>
     </nav>
     <slot/>
 
-<footer class="flex justify-evenly p-10 bg-muted item-center rounded-t-md">
-  <nav class="flex flex-col">
-    <header class="flex mb-3 font-bold">Services</header> 
-    <a class="font-thin flex items-center">
-      <Icon name="circum:share-2" class="text-lg mr-1" />
-      Link sharing
-    </a>
-  </nav> 
-  <nav class="flex flex-col">
-    <header class="flex mb-3 font-bold">Website</header> 
-    <a class="font-thin flex items-center" href="/#about">
-        <Icon name="circum:home" class="text-lg mr-1" />
-        About
-    </a>
-    <a class="font-thin flex items-center" href="/contact">
-        <Icon name="circum:mobile-1" class="text-lg mr-1" />
-        Contact
-      </a>
-    <a class="font-thin flex items-center" href="/support">
-        <Icon name="circum:stethoscope" class="text-lg mr-1" />
-        Support
-    </a>
-  </nav> 
-  <nav class="flex flex-col">
-    <header class="flex mb-3 font-bold">Legal</header> 
-    <a class="font-thin flex items-center" href="/terms" >
-        <Icon name="circum:bookmark" class="text-lg mr-1" />
-      Terms of use
-    </a>
-    <a class="font-thin flex items-center" href="/privacy">
-      <Icon name="circum:bookmark" class="text-lg mr-1" />
-      Privacy policy
-    </a>
-    <a class="font-thin flex items-center" href="/security">
-      <Icon name="circum:bookmark" class="text-lg mr-1" />
-      Security policy
-    </a>
-  </nav>
-</footer> 
+<footer class="bg-muted p-10 rounded-t-md">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <nav>
+      <header class="mb-3 font-bold">Services</header> 
+      <div class="flex flex-col">
+        <a class="font-thin flex items-center">
+          <Icon name="circum:share-2" class="text-lg mr-1" />
+          Link sharing
+        </a>
+      </div>
+    </nav> 
+    <nav>
+      <header class="mb-3 font-bold">Website</header> 
+      <div class="flex flex-col">
+        <a class="font-thin flex items-center" href="/#about">
+            <Icon name="circum:home" class="text-lg mr-1" />
+            About
+        </a>
+        <a class="font-thin flex items-center" href="/contact">
+            <Icon name="circum:mobile-1" class="text-lg mr-1" />
+            Contact
+        </a>
+        <a class="font-thin flex items-center" href="/support">
+            <Icon name="circum:stethoscope" class="text-lg mr-1" />
+            Support
+        </a>
+      </div>
+    </nav> 
+    <nav>
+      <header class="mb-3 font-bold">Legal</header> 
+      <div class="flex flex-col">
+        <a class="font-thin flex items-center" href="/terms" >
+            <Icon name="circum:bookmark" class="text-lg mr-1" />
+          Terms of use
+        </a>
+        <a class="font-thin flex items-center" href="/privacy">
+          <Icon name="circum:bookmark" class="text-lg mr-1" />
+          Privacy policy
+        </a>
+        <a class="font-thin flex items-center" href="/security">
+          <Icon name="circum:bookmark" class="text-lg mr-1" />
+          Security policy
+        </a>
+      </div>
+    </nav>
+  </div>
+</footer>
+
+
 <footer class="flex justify-between px-10 py-4 border-t bg-muted border-neutral-600">
   <aside class="items-center grid-flow-col font-thin">
     <p>© 2024 Openlinks, Inc. ❤️</p>
@@ -77,4 +86,5 @@ import ButtonLogin from '@/components/nav/ButtonLogin.vue';
 import ButtonGithub from '@/components/nav/ButtonGithub.vue';
 import ButtonSearch from '@/components/nav/ButtonSearch.vue';
 import MenuNav from '@/components/nav/MenuNav.vue';
+import ButtonDropdown from '@/components/nav/ButtonDropdown.vue';
 </script>

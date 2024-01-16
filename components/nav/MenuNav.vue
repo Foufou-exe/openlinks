@@ -1,46 +1,3 @@
-<script setup lang="ts">
-import ListItem from './NavigationMenuDemoItem.vue'
-
-import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: 'Alert Dialog',
-    href: '/docs/primitives/alert-dialog',
-    description:
-      'A modal dialog that interrupts the user with important content and expects a response.',
-  },
-  {
-    title: 'Hover Card',
-    href: '/docs/primitives/hover-card',
-    description:
-      'For sighted users to preview content available behind a link.',
-  },
-  {
-    title: 'Progress',
-    href: '/docs/primitives/progress',
-    description:
-      'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
-  },
-  {
-    title: 'Scroll-area',
-    href: '/docs/primitives/scroll-area',
-    description: 'Visually or semantically separates content.',
-  },
-  {
-    title: 'Tabs',
-    href: '/docs/primitives/tabs',
-    description:
-      'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
-  },
-  {
-    title: 'Tooltip',
-    href: '/docs/primitives/tooltip',
-    description:
-      'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.',
-  },
-]
-</script>
-
 <template>
   <NavigationMenu>
     <NavigationMenuList>
@@ -77,7 +34,7 @@ const components: { title: string; href: string; description: string }[] = [
         </NavigationMenuContent>
       </NavigationMenuItem>
       <NavigationMenuItem>
-        <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+        <NavigationMenuTrigger>Features</NavigationMenuTrigger>
         <NavigationMenuContent>
           <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
             <ListItem
@@ -85,6 +42,7 @@ const components: { title: string; href: string; description: string }[] = [
               :key="component.title"
               :title="component.title"
               :href="component.href"
+              :icons="component.icons"
             >
               {{ component.description }}
             </ListItem>
@@ -92,15 +50,65 @@ const components: { title: string; href: string; description: string }[] = [
         </NavigationMenuContent>
       </NavigationMenuItem>
       <NavigationMenuItem>
-        <NavigationMenuLink href="/docs" :class="navigationMenuTriggerStyle()">
-          Contact
-        </NavigationMenuLink>
+        <NavigationMenuTrigger>Need help ?</NavigationMenuTrigger>
+        <NavigationMenuContent>
+          <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ListItem
+              v-for="componentshelp in componentsHelp"
+              :key="componentshelp.title"
+              :title="componentshelp.title"
+              :href="componentshelp.href"
+              :icons="componentshelp.icons"
+            >
+              {{ componentshelp.description }}
+            </ListItem>
+          </ul>
+        </NavigationMenuContent>
       </NavigationMenuItem>
       <NavigationMenuItem>
-        <NavigationMenuLink href="/support" :class="navigationMenuTriggerStyle()">
-          Support
+        <NavigationMenuLink href="/contact" :class="navigationMenuTriggerStyle()">
+          Contact
         </NavigationMenuLink>
       </NavigationMenuItem>
     </NavigationMenuList>
   </NavigationMenu>
 </template>
+
+<script setup lang="ts">
+import ListItem from './NavigationMenuItem.vue'
+
+import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
+const components: { title: string; href: string; description: string; icons: string; }[] = [
+  {
+    title: 'Alert Dialog',
+    icons: 'circum:stethoscope',
+    href: '/docs/primitives/alert-dialog',
+    description:
+      'A modal dialog that interrupts the user with important content and expects a response.',
+  },
+  {
+    title: 'Alert Dialog',
+    icons: 'circum:stethoscope',
+    href: '/docs/primitives/alert-dialog',
+    description:
+      'A modal dialog that interrupts the user with important content and expects a response.',
+  },
+]
+
+const componentsHelp: { title: string; href: string; description: string; icons: string; }[] = [
+  {
+    title: 'FAQ',
+    icons: 'circum:square-question',
+    href: '/faq',
+    description:
+      'Frequently asked questions about Openlinks.',
+  },
+  {
+    title: 'Support', 
+    icons: 'circum:stethoscope',
+    href: '/support',
+    description:
+      'Get help with Openlinks. Contact us for help with your account, plan, or billing.',
+  },
+]
+</script>

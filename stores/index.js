@@ -120,6 +120,22 @@ const useOsStore = defineStore('os', {
   }
 });
 
+const useThemeStore = defineStore('theme', {
+  state: () => ({
+    theme: 'dark',
+  }),
+  getters: {
+    isDark: (state) => {
+      return state.theme === 'dark';
+    }
+  },
+  actions: {
+    toggleTheme() {
+      this.theme = this.theme === 'light' ? 'dark' : 'light';
+    }
+  }
+});
+
 
 export { 
     useOsStore,

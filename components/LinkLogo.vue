@@ -1,7 +1,7 @@
 <template>
     <a class="flex items-center text-lg font-medium space-x-2" href="/">
         <NuxtImg src="/icon.png"  class="w-[40px]"/>
-        <h1>Openlinks{{ emojisStore.currentEmoji }}</h1>
+        <h1>Openlinks {{ emojisStore.currentEmoji }}</h1>
     </a>
 </template>
 
