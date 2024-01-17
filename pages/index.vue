@@ -1,7 +1,7 @@
 <template>
     <!-- <MaintenceSite /> -->
     <div class="flex min-h-screen flex-col">
-        <section id="about" class="min-h-screen flex">
+        <section id="about" class="min-h-screen flex justify-center items-center">
             <SectionAbout />
         </section>
         <section id="why" class="min-h-screen">

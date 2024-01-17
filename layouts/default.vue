@@ -34,10 +34,6 @@
             <Icon name="circum:home" class="text-lg mr-1" />
             About
         </a>
-        <a class="font-thin flex items-center" href="/contact">
-            <Icon name="circum:mobile-1" class="text-lg mr-1" />
-            Contact
-        </a>
         <a class="font-thin flex items-center" href="/support">
             <Icon name="circum:stethoscope" class="text-lg mr-1" />
             Support
@@ -47,17 +43,13 @@
     <nav>
       <header class="mb-3 font-bold">Legal</header> 
       <div class="flex flex-col">
-        <a class="font-thin flex items-center" href="/terms" >
+        <a class="font-thin flex items-center" href="/termsOfUse" >
             <Icon name="circum:bookmark" class="text-lg mr-1" />
           Terms of use
         </a>
-        <a class="font-thin flex items-center" href="/privacy">
+        <a class="font-thin flex items-center" href="/privacyPolicy">
           <Icon name="circum:bookmark" class="text-lg mr-1" />
           Privacy policy
-        </a>
-        <a class="font-thin flex items-center" href="/security">
-          <Icon name="circum:bookmark" class="text-lg mr-1" />
-          Security policy
         </a>
       </div>
     </nav>

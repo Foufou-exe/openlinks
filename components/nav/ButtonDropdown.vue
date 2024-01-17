@@ -102,15 +102,6 @@
             Ctrl+Alt+S
           </DropdownMenuShortcut>
         </DropdownMenuItem>
-        <DropdownMenuItem>
-          <a href="/support" class="flex items-center justify-center space-x-1 mr-2">
-            <Icon name="circum:edit" class="text-lg" />
-            <span>Contact</span>
-          </a>
-          <DropdownMenuShortcut>
-            Ctrl+Alt+C
-          </DropdownMenuShortcut>
-        </DropdownMenuItem>
       </DropdownMenuGroup>
       <DropdownMenuSeparator />
       <DropdownMenuItem>

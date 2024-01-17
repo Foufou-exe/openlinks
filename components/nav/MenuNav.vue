@@ -65,11 +65,6 @@
           </ul>
         </NavigationMenuContent>
       </NavigationMenuItem>
-      <NavigationMenuItem>
-        <NavigationMenuLink href="/contact" :class="navigationMenuTriggerStyle()">
-          Contact
-        </NavigationMenuLink>
-      </NavigationMenuItem>
     </NavigationMenuList>
   </NavigationMenu>
 </template>
