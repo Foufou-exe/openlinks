@@ -39,6 +39,7 @@
     "tailwindcss-animate": "^1.0.7",
     "vee-validate": "^4.12.4",
     "vue-command-palette": "^0.2.3",
+    "vue3-lottie": "^3.2.0",
     "zod": "^3.22.4"
   }
 }
