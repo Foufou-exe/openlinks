@@ -27,8 +27,8 @@
             <ListItem href="/#why" title="Why use Openlinks ?" icons="circum:search">
                 Openlinks is a project designed to bring together new articles, shared links and much more.
             </ListItem>
-            <ListItem href="/#security" title="Security" icons="circum:server">
-                Openlinks implements security measures to protect your data.
+            <ListItem href="/#HowDoIUseIt" title="How do i use it ?" icons="circum:read">
+              Openlinks is easy to use and you can use it in many ways. 
             </ListItem>
           </ul>
         </NavigationMenuContent>
@@ -72,14 +72,12 @@
 <script setup lang="ts">
 import ListItem from './NavigationMenuItem.vue'
 
-import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 const components: { title: string; href: string; description: string; icons: string; }[] = [
   {
-    title: 'Alert Dialog',
-    icons: 'circum:stethoscope',
-    href: '/docs/primitives/alert-dialog',
-    description:
-      'A modal dialog that interrupts the user with important content and expects a response.',
+    title: 'Security',
+    icons: 'circum:server',
+    href: '/#security',
+    description: 'Openlinks prioritises the security of its users data',
   },
   {
     title: 'Alert Dialog',

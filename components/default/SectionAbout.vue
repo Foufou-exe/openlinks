@@ -5,15 +5,55 @@
             Your Link Manager Designed for Confidentiality and Flexibility. <br>
             OpenLinks revolutionises the way you save and access your favourite links. Designed for modern professionals, students and everyone in between, our platform lets you store links to anything - from essential articles and video tutorials to collaborative project pages - and find them easily at any time, on any device.
         </p>
-        <Button type="button" class="flex items-center justify-center rounded-full ">
-            <Icon name="circum:paperplane"  class="text-xl mr-1"/>
-            Get Started
-        </Button>
-        <div class="flex items-end">
-            <a href="">
-                <Icon name="pajamas:github" class="text-3xl mr-2" />
-            </a>
-        </div>
+        <Dialog>
+            <DialogTrigger as-child>
+                <Button type="button" class="flex items-center justify-center rounded-full ">
+                    <Icon name="circum:paperplane"  class="text-xl mr-1"/>
+                    Get Started
+                </Button>
+            </DialogTrigger>
+            <DialogContent class="sm:max-w-[425px]">
+                <DialogHeader class="space-y-7">
+                    <DialogTitle class="flex justify-center items-center space-x-2">
+                        <NuxtImg src="/icon.png" alt="OpenLinks" width="80"/>
+                        <Icon name="circum:shuffle"  class="text-5xl text-gray-400"/>
+                        <Icon name="circum:share-2"  class="text-6xl bg-muted rounded-lg p-2"/>
+                    </DialogTitle>
+                    <DialogTitle class="font-semibold flex justify-center items-center text-xl">
+                        Openlinks is a link manager designed for confidentiality and flexibility.
+                    </DialogTitle>
+                </DialogHeader>
+                <div>
+                    <Separator class="my-4"/>
+                    <div class="flex space-x-4 justify-center items-center">
+                        <Icon name="circum:folder-on"  class="text-3xl "/>
+                        <p class="text-gray-400">
+                            Organise your links into folders and subfolders
+                        </p>
+                    </div>
+                    <Separator class="my-4"/>
+                    <div class="flex space-x-4 justify-center items-center">
+                        <Icon name="circum:share-2"  class="text-3xl"/>
+                        <p class="text-gray-400">
+                            Share your links with your friends and colleagues
+                        </p>
+                    </div>
+                    <Separator class="my-4"/>
+                </div>
+                <div class="space-y-2">
+                    <Button type="button" class="w-full" as-child>
+                        <a href="/auth" class="flex items-center text-lg">
+                            <Icon name="circum:login"  class="text-2xl mr-2"/>
+                             Sign in
+                        </a>
+                    </Button>
+                    <p class="flex justify-center items-center">
+                        Or you can have account  
+                        <a href="/auth?tab=login" class="text-blue-500 ml-1"> Sign up</a>
+                    </p>
+                </div>
+            </DialogContent>
+        </Dialog>
     </div>
     <div class="hidden md:block md:w-full">
         <client-only>

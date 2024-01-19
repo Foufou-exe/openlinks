@@ -35,53 +35,53 @@ const defaultValue = 'item-1'
 const accordionItems = [
     {
         value: 'item-1',
-        title: 'Qu\'est-ce qu\'OpenLinks ?',
-        content: 'OpenLinks est une plateforme qui permet aux utilisateurs de stocker, partager et organiser leurs liens favoris (comme YouTube, GitHub, articles de magazines, etc.). Vous pouvez également créer des équipes avec vos amis pour partager des liens de manière collaborative.'
+        title: 'What is OpenLinks?',
+        content: 'OpenLinks is a platform that allows users to store, share and organise their favourite links (such as YouTube, GitHub, magazine articles, etc.). You can also create teams with your friends to share links collaboratively.'
     },
     {
         value: 'item-2',
-        title: 'Comment puis-je commencer à utiliser OpenLinks ?',
-        content: 'Pour commencer à utiliser OpenLinks, créez un compte sur notre site web. Une fois inscrit, vous pouvez immédiatement commencer à ajouter, organiser et partager des liens.'
+        title: 'How do I get started with OpenLinks?',
+        content: 'To start using OpenLinks, create an account on our website. Once registered, you can immediately start adding, organising and sharing links.'
     },
     {
         value: 'item-3',
-        title: 'Est-ce que OpenLinks est gratuit ?',
-        content: 'Oui, OpenLinks offre une version gratuite de base. Nous proposons également des abonnements premium avec des fonctionnalités supplémentaires pour les utilisateurs avancés.'
+        title: 'Is OpenLinks free?',
+        content: 'Yes, OpenLinks offers a basic free version. We also offer premium subscriptions with additional features for advanced users.'
     },
     {
         value: 'item-4',
-        title: 'Comment puis-je partager des liens avec d\'autres utilisateurs sur OpenLinks ?',
-        content: 'Pour partager des liens, ajoutez-les à votre compte OpenLinks, puis utilisez l\'option de partage pour envoyer ces liens à d\'autres utilisateurs ou à votre équipe.'
+        title: 'How do I share links with other users on OpenLinks?',
+        content: 'To share links, add them to your OpenLinks account, then use the share option to send the links to other users or your team.',
     },
     {
         value: 'item-5',
-        title: 'Puis-je garder certains de mes liens privés ?',
-        content: 'Absolument. OpenLinks vous permet de choisir si vous souhaitez partager un lien spécifique avec la communauté ou le garder privé pour votre usage personnel.'
+        title: 'Can I keep some of my links private?',
+        content: 'Absolutely. OpenLinks lets you choose whether you want to share a specific link with the community or keep it private for your own use.'
     },
     {
         value: 'item-6',
-        title: 'Comment fonctionnent les équipes sur OpenLinks ?',
-        content: 'Les équipes permettent à un groupe d\'utilisateurs de partager facilement des liens entre eux. Vous pouvez rejoindre une équipe existante ou en créer une nouvelle et inviter des amis ou des collègues à la rejoindre.'
+        title: 'How do teams work on OpenLinks?',
+        content: 'Teams allow a group of users to easily share links with each other. You can join an existing team or create a new one and invite friends or colleagues to join.'
     },
     {
         value: 'item-7',
-        title: 'OpenLinks offre-t-il des options de tri et de filtrage pour les liens ?',
-        content: 'Oui, OpenLinks propose diverses options pour trier et filtrer vos liens, telles que la catégorie, la date d ajout, etc.'
+        title: 'Does OpenLinks offer sorting and filtering options for links?',
+        content: 'Yes, OpenLinks offers various options for sorting and filtering your links, such as category, date added, etc.'
     },
     {
         value: 'item-8',
-        title: 'Comment OpenLinks assure-t-il la sécurité de mes données ?',
-        content: 'La sécurité des données est une priorité absolue pour nous. Nous utilisons des techniques de cryptage avancées pour protéger vos informations personnelles et vos liens.'
+        title: 'How does OpenLinks ensure the security of my data?',
+        content: 'Data security is an absolute priority for us. We use advanced encryption techniques to protect your personal information and your links.'
     },
     {
         value: 'item-9',
-        title: 'Puis-je utiliser OpenLinks sur mon téléphone ?',
-        content: 'Oui, OpenLinks est conçu pour être entièrement responsive et fonctionne parfaitement sur les appareils mobiles.'
+        title: 'Can I use OpenLinks on my phone?',
+        content: 'Yes, OpenLinks is designed to be fully responsive and works perfectly on mobile devices.'
     },
     {
         value: 'item-10',
-        title: 'Où puis-je demander de l aide ou du support ?',
-        content: 'Pour toute assistance, veuillez visiter notre page de support ou nous contacter via notre formulaire de contact sur le site.'
+        title: 'Where can I get help or support?',
+        content: 'For assistance, please visit our support page or contact us via our contact form on the site.'
     },
 ];
 

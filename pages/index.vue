@@ -7,6 +7,9 @@
         <section id="why" class="min-h-screen">
             <SectionWhy />
         </section>
+        <section id="HowDoIUseIt" class="min-h-screen">
+            <SectionHowDoIUseIt />
+        </section>
         <section id="security" class="min-h-screen">
             <SectionSecurity />
         </section>
@@ -18,8 +21,9 @@
 // import MaintenceSite from '@/components/MaintenceSite.vue'
 
 import SectionAbout  from "@/components/default/SectionAbout.vue";
-import SectionSecurity from "@/components/default/SectionSecurity.vue";
+import SectionHowDoIUseIt from "@/components/default/SectionHowDoIUseIt.vue";
 import SectionWhy from "@/components/default/SectionWhy.vue";
+import SectionSecurity from "@/components/default/SectionSecurity.vue";
 
 
 useSeoMeta({

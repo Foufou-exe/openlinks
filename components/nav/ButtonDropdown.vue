@@ -36,9 +36,9 @@
           </DropdownMenuShortcut>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <a href="/#security" class="flex items-center justify-center space-x-1 mr-2">
-            <Icon name="circum:server" class="text-lg" />
-            <span>Security</span>
+          <a href="/#HowDoIUseIt" class="flex items-center justify-center space-x-1 mr-2">
+            <Icon name="circum:read" class="text-lg" />
+            <span>How do i use it ?</span>
           </a>
           <DropdownMenuShortcut>
             Ctrl+Alt+O
@@ -53,8 +53,8 @@
 
         <DropdownMenuItem>
           <a href="/faq" class="flex items-center justify-center space-x-1 mr-2">
-            <Icon name="circum:square-question" class="text-lg" />
-            <span>Feature 1</span>
+            <Icon name="circum:server" class="text-lg" />
+            <span>Security</span>
           </a>
           <DropdownMenuShortcut>
             Ctrl+Alt+F

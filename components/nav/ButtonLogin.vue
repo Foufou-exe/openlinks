@@ -3,7 +3,7 @@
     <Tooltip>
         <TooltipTrigger as-child>
             <Button type="button" as-child>
-                <a href="/auth/" class="flex justify-center items-center ">
+                <a href="/auth" class="flex justify-center items-center ">
                     <Icon name="circum:login" class="text-2xl mr-2" />
                     <span class="hidden lg:flex">Sign in</span>
                 </a>
