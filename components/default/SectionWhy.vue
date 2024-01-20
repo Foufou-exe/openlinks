@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 grid-rows-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-fr">
             <CardWhyVue 
                 v-for="(component, index) in componentsHelp"
                 :key="index"
@@ -68,7 +68,7 @@ const componentsHelp: { title: string; description: string; icons: string; }[] =
     title: 'Support 24/7',
     icons: 'circum:chat-1',
     description:
-      'We offer 24/7 support. If you have any questions, please contact us.',
+      'We offer 24/7 support. If you have any questions, please contact us. We use the latest type of encryption.',
   },
 ]
 </script>
