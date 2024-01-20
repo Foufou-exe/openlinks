@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "antfu.iconify",
+        "nuxtr.nuxt-vscode-extentions",
+        "vue.vscode-typescript-vue-plugin",
+        "vue.volar",
+        "shenjiaolong.vue-helper"
+    ]
+}
