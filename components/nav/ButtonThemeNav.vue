@@ -2,7 +2,7 @@
   <TooltipProvider>
     <Tooltip>
       <TooltipTrigger as-child>
-        <Button @click="toggleTheme" variant="z" :class="colorMode.preference === 'dark' ? 'theme-light' : 'theme-dark' ">
+        <Button @click="toggleTheme" variant="ghost" :class="colorMode.preference === 'dark' ? 'theme-light' : 'theme-dark' ">
           <Icon :name="currentThemeIcon" class="text-2xl" />
         </Button>
       </TooltipTrigger>
@@ -39,7 +39,7 @@ const currentThemeIcon = computed(() => {
   if (colorMode.preference === 'system') {
     return 'circum:laptop';
   } else {
-    return colorMode.preference === 'dark' ? 'circum:sun' : 'circum:dark';
+    return colorMode.preference === 'dark' ? 'material-symbols:wb-sunny-outline-rounded' : 'circum:dark';
   }
 });
 

@@ -3,7 +3,7 @@
     <Tooltip>
         <TooltipTrigger as-child>
             <Button type="button" as-child>
-                <a href="/auth" class="flex justify-center items-center ">
+                <a href="/auth" class="flex justify-center items-center">
                     <Icon name="circum:login" class="text-2xl mr-2" />
                     <span class="hidden lg:flex">Sign in</span>
                 </a>
@@ -28,10 +28,14 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 const keys = useMagicKeys()
 
-watch(keys['Shift+L'] || keys['Shift+L'], (isPressed) => {
-    if (isPressed) {
-        router.push('/auth/')
-    }
-});
+watch(
+    keys['Shift+L'] || keys['Shift+L'],
+    (isPressed) => {
+        if (isPressed) {
+            router.push('/auth')
+        }
+    },
+    { immediate: true }
+)
 
 </script>

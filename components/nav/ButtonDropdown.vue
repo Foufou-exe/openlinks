@@ -1,7 +1,7 @@
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
-      <Button variant="ghost" class="sm:flex md:flex lg:hidden">
+      <Button variant="ghost" class="sm:flex md:flex ">
         <Icon name="circum:menu-kebab" class="text-xl" />
       </Button>
     </DropdownMenuTrigger>
@@ -23,7 +23,7 @@
             <span>About</span>
           </a>
           <DropdownMenuShortcut>
-            Ctrl+Alt+A
+            {{ osStore.shortcutSymbol }}+Alt+A
           </DropdownMenuShortcut>
         </DropdownMenuItem>
         <DropdownMenuItem>
@@ -32,7 +32,7 @@
             <span>Why use Openlinks ?</span>
           </a>
           <DropdownMenuShortcut>
-            Ctrl+Alt+Q
+            {{ osStore.shortcutSymbol }}+Alt+Q
           </DropdownMenuShortcut>
         </DropdownMenuItem>
         <DropdownMenuItem>
@@ -41,7 +41,7 @@
             <span>How do i use it ?</span>
           </a>
           <DropdownMenuShortcut>
-            Ctrl+Alt+O
+            {{ osStore.shortcutSymbol }}+Alt+O
           </DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuGroup>
@@ -57,7 +57,7 @@
             <span>Security</span>
           </a>
           <DropdownMenuShortcut>
-            Ctrl+Alt+F
+            {{ osStore.shortcutSymbol }}+Alt+N
           </DropdownMenuShortcut>
         </DropdownMenuItem>
         <DropdownMenuItem>
@@ -66,7 +66,7 @@
             <span>Feature 1</span>
           </a>
           <DropdownMenuShortcut>
-            Ctrl+Alt+F
+            {{ osStore.shortcutSymbol }}+Alt+F
           </DropdownMenuShortcut>
         </DropdownMenuItem>
         <DropdownMenuItem>
@@ -75,7 +75,7 @@
             <span>Feature 1</span>
           </a>
           <DropdownMenuShortcut>
-            Ctrl+Alt+F
+            {{ osStore.shortcutSymbol }}+Alt+F
           </DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuGroup>
@@ -90,7 +90,7 @@
             <span>FAQ</span>
           </a>
           <DropdownMenuShortcut>
-            Ctrl+Alt+F
+            {{ osStore.shortcutSymbol }}+Alt+F
           </DropdownMenuShortcut>
         </DropdownMenuItem>
         <DropdownMenuItem>
@@ -99,7 +99,7 @@
             <span>Support</span>
           </a>
           <DropdownMenuShortcut>
-            Ctrl+Alt+S
+            {{ osStore.shortcutSymbol }}+Alt+S
           </DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuGroup>
@@ -113,4 +113,40 @@
 
 <script setup>
 import StarsGithub from './StarsGithub.vue';
+import { useOsStore } from '@/stores/index';
+const osStore = useOsStore();
+
+import { watch } from 'vue';
+import { useMagicKeys } from '@vueuse/core';
+import { useRouter } from 'vue-router';
+
+const { router } = useRouter()
+const keys = useMagicKeys()
+
+// Définissez des watchers pour chaque raccourci clavier
+watch(keys['Ctrl+Alt+A'] || keys['Meta+Alt+A'], (isPressed) => {
+  if (isPressed) navigateTo('/#about');
+});
+
+watch(keys['Ctrl+Alt+Q'] || keys['Meta+Alt+Q'], (isPressed) => {
+  if (isPressed) navigateTo('/#why');
+});
+
+watch(keys['Ctrl+Alt+O'] || keys['Meta+Alt+O'], (isPressed) => {
+  if (isPressed) navigateTo('/#HowDoIUseIt');
+});
+
+watch(keys['Ctrl+Alt+F'] || keys['Meta+Alt+F'], (isPressed) => {
+  if (isPressed) navigateTo('/faq');
+});
+
+watch(keys['Ctrl+Alt+S'] || keys['Meta+Alt+S'], (isPressed) => {
+  if (isPressed) navigateTo('/support');
+});
+
+watch(keys['Ctrl+Alt+N'] || keys['Meta+Alt+N'], (isPressed) => {
+  if (isPressed) navigateTo('/#security');
+});
+
+
 </script>

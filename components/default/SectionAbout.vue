@@ -2,8 +2,7 @@
     <div class="w-full md:w-55/100 lg:pt-10 space-y-5">
         <h1 class="font-bold text-4xl leading-none md:mt-0">Organise, Share and Protect Your Favourite Links with Openlinks <span class="animate-pulse">✨</span></h1>
         <p class="text-lg font-normal">
-            Your Link Manager Designed for Confidentiality and Flexibility. <br>
-            OpenLinks revolutionises the way you save and access your favourite links. Designed for modern professionals, students and everyone in between, our platform lets you store links to anything - from essential articles and video tutorials to collaborative project pages - and find them easily at any time, on any device.
+            OpenLinks, your link manager for confidentiality and adaptability, is reinventing the way you back up and access your online resources. Whether you're a professional, a student or anyone else, our service makes it easy to organise and retrieve your important content, accessible anywhere and on any device.
         </p>
         <Dialog>
             <DialogTrigger as-child>

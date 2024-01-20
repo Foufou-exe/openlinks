@@ -50,15 +50,10 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { useOsStore } from '@/stores/index';
 import { useMagicKeys } from '@vueuse/core'
-
+import { useOsStore } from '@/stores/index';
 const osStore = useOsStore();
-const visible = ref(false)
 
-function toggle() {
-    visible.value = !visible.value
-}
 
 const open = ref(false)
 
