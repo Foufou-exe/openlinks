@@ -28,8 +28,8 @@ import { onMounted, onUnmounted } from 'vue';
 import UserAuthForm from '@/components/auth/UserAuthForm.vue';
 import LinkLogo from '@/components/LinkLogo.vue';
 
-import { useQuotesStore, useImagesStore } from '@/stores/index.js';
-
+import { useImagesStore } from '@/stores/imagesStore.js';
+import { useQuotesStore } from '@/stores/quotesStore.js';
 const quotesStore = useQuotesStore();
 const imagesStore = useImagesStore();
 

@@ -51,7 +51,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { useMagicKeys } from '@vueuse/core'
-import { useOsStore } from '@/stores/index';
+import { useOsStore } from '@/stores/osStore.js';
 const osStore = useOsStore();
 
 

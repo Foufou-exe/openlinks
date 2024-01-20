@@ -1,23 +1,11 @@
-/*
-    Files in this folder are automatically registered as stores.
-*/
-
-// Path: app/stores/index.js
-import { defineStore } from "pinia";
-import  platform  from  "platform";
+import { defineStore } from 'pinia'
 
 function getRandomItem(array) {
-    const randomIndex = Math.floor(Math.random() * array.length);
-    return array[randomIndex];
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
 }
 
-function determineOS() {
-  if (platform.os.family == "Mac") return 'MacOS';
-  if (platform.os.family == "Win32") return 'Windows';
-  return 'Linux';
-}
-
-const useQuotesStore = defineStore("quotes", {
+export const useQuotesStore = defineStore("quotes", {
   state: () => ({
     randomQuote: {
         text: "The most remarkable development of our era is undoubtedly open source, enriched and invigorated by its passionate community.",
@@ -76,70 +64,3 @@ const useQuotesStore = defineStore("quotes", {
     },
   },
 });
-
-const useImagesStore = defineStore("images", {
-  state: () => ({
-    currentImage: "/images/form/background1.png",
-    images: [
-        "/images/form/background1.png",
-        "/images/form/background2.png",
-        "/images/form/background3.png",
-    ],
-  }),
-  actions: {
-    changeImage() {
-        this.currentImage = getRandomItem(this.images);
-    },
-  },
-});
-
-const useEmojisStore = defineStore("emojis", {
-  state: () => ({
-    currentEmoji: "✨",
-    emojis: ["✨", "🚀", "🌟", "🔥"],
-  }),
-  actions: {
-    changeEmoji() {
-        this.currentEmoji = getRandomItem(this.emojis);
-    },
-  },
-});
-
-
-const useOsStore = defineStore('os', {
-  state: () => ({
-    os: determineOS(),
-  }),
-  getters: {
-    shortcutSymbol: (state) => {
-      if (state.os === 'MacOS') {
-        return '⌘';
-      }
-      return 'Ctrl';
-    }
-  }
-});
-
-const useThemeStore = defineStore('theme', {
-  state: () => ({
-    theme: 'dark',
-  }),
-  getters: {
-    isDark: (state) => {
-      return state.theme === 'dark';
-    }
-  },
-  actions: {
-    toggleTheme() {
-      this.theme = this.theme === 'light' ? 'dark' : 'light';
-    }
-  }
-});
-
-
-export { 
-    useOsStore,
-    useQuotesStore, 
-    useImagesStore, 
-    useEmojisStore 
-};

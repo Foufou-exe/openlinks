@@ -7,7 +7,7 @@
 
 <script setup>
 import { onMounted, onUnmounted } from 'vue';
-import { useEmojisStore } from '@/stores/index.js';
+import { useEmojisStore } from '@/stores/emojisStore.js';
 
 const emojisStore = useEmojisStore();
 

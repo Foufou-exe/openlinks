@@ -113,7 +113,7 @@
 
 <script setup>
 import StarsGithub from './StarsGithub.vue';
-import { useOsStore } from '@/stores/index';
+import { useOsStore } from '@/stores/osStore.js';
 const osStore = useOsStore();
 
 import { watch } from 'vue';

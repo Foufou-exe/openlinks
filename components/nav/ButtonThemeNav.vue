@@ -20,7 +20,7 @@
   
 <script setup>
 import { computed } from 'vue';
-import { useOsStore } from '@/stores/index';
+import { useOsStore } from '@/stores/osStore.js';
 import { watch } from 'vue'
 import { useMagicKeys } from '@vueuse/core'
 const keys = useMagicKeys()
