@@ -1,16 +1,16 @@
 <template>
     <!-- <MaintenceSite /> -->
-    <div class="flex min-h-screen flex-col">
-        <section id="about" class="min-h-screen mx-auto flex max-w-6xl items-center p-5 pb-10 md:px-6">
+    <div>
+        <section id="about" class="flex min-h-screen w-full max-w-6xl items-center justify-center px-5 mb-10 md:px-6 mx-auto">
             <SectionAbout />
         </section>
-        <section id="why" class="min-h-screen mx-auto flex max-w-6xl items-center p-5 pb-10 md:px-6">
+        <section id="why" class="min-h-screen mx-auto flex max-w-6xl items-center p-5 mb-10 md:px-6" >
             <SectionWhy />
         </section>
-        <section id="HowDoIUseIt" class="min-h-screen mx-auto flex max-w-6xl items-center p-5 pb-10 md:px-6">
+        <section id="HowDoIUseIt" class="min-h-screen mx-auto flex max-w-6xl items-center p-5 mb-10 md:px-6">
             <SectionHowDoIUseIt />
         </section>
-        <section id="security" class="min-h-screen mx-auto flex max-w-6xl items-center p-5 pb-10 md:px-6">
+        <section id="security" class="min-h-screen mx-auto flex max-w-6xl items-center p-5 mb-10 md:px-6">
             <SectionSecurity />
         </section>
     </div>

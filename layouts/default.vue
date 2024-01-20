@@ -1,6 +1,6 @@
 <template>
   <nav class="flex justify-between p-2">
-    <div class="flex space-x-2 p-1 justify-center items-center max-sm:bg-muted md:bg-muted lg:bg-transparent rounded-lg">
+    <div class="flex space-x-2 p-1 justify-center items-center">
       <ButtonDropdown />
       <LinkLogo class="max-sm:hidden md:hidden lg:flex" />
     </div>

@@ -16,73 +16,43 @@
       </div>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div class="p-5 border rounded-lg">
-        <div class="flex items-center space-x-3">
-          <Icon name="circum:database" class="text-4xl bg-muted rounded p-1" />
-          <h1 class="font-semibold text-lg">
-            Data Storage
-          </h1>
-        </div>
-        <div class="mt-3">
-          <p class="font-thin">
-            Your data is stored on secure, encrypted servers. And only you can access it.
-          </p>
-        </div>
-        <h3 class="mt-3 font-medium">
-          You are in control of your data
-        </h3>
-        <div class="mt-3">
-          <p class="font-thin">
-            You can delete your data at any time. We will never sell your data to third parties.
-
-          </p>
-        </div>
-      </div>
-      <div class="p-5 border rounded-lg">
-        <div class="flex items-center space-x-3">
-          <Icon name="circum:bank" class="text-4xl bg-muted rounded p-1" />
-          <h1 class="font-semibold text-lg">
-            End-to-end encryption
-          </h1>
-        </div>
-        <div class="mt-3">
-          <p class="font-thin">
-            Your data is encrypted from the moment you enter it. Only you can decrypt it.
-          </p>
-        </div>
-        <h3 class="mt-3 font-medium">
-          No data is stored unencrypted on our servers
-        </h3>
-        <div class="mt-3">
-          <p class="font-thin">
-            We use the latest encryption technology to protect your data. We use the latest type of encryption.
-            No data is sold to third parties.
-          </p>
-        </div>
-      </div>
-      <div class="p-5 border rounded-lg">
-        <div class="flex items-center space-x-3">
-          <Icon name="circum:grid-4-1" class="text-4xl bg-muted rounded p-1" />
-          <h1 class="font-semibold text-lg">
-            24/7 availability
-          </h1>
-        </div>
-        <div class="mt-3">
-          <p class="font-thin">
-            Our servers are always available. We guarantee 99.9% uptime.
-          </p>
-
-          <h3 class="mt-3 font-medium">
-            The priority is you
-          </h3>
-          <div class="mt-3">
-            <p class="font-thin">
-              We are always available to help you. We are always available to help you.
-            </p>
-          </div>
-        </div>
-      </div>
+      <CardSecurity
+        v-for="card in cards"
+        :key="card.title"
+        :title="card.title"
+        :description="card.description"
+        :icons="card.icons"
+        :title2="card.title2"
+        :description2="card.description2"
+      />
     </div>
   </div>
 </template>
 
+<script lang="ts" setup>
+import CardSecurity from '@/components/default/security/CardSecurity.vue';
+
+const cards = [
+  {
+    title: 'Data Storage',
+    description: 'Your data is stored on secure, encrypted servers. And only you can access it.',
+    icons: 'circum:database',
+    title2: 'You are in control of your data',
+    description2: 'You can delete your data at any time. We will never sell your data to third parties.',
+  },
+  {
+    title: 'End-to-end encryption',
+    description: 'Your data is encrypted from the moment you enter it. Only you can decrypt it.',
+    icons: 'circum:bank',
+    title2: 'No data is stored unencrypted on our servers',
+    description2: 'We use the latest encryption technology to protect your data. We use the latest type of encryption. No data is sold to third parties.',
+  },
+  {
+    title: '24/7 availability',
+    description: 'Our servers are always available. We guarantee 99.9% uptime.',
+    icons: 'circum:grid-4-1',
+    title2: 'The priority is you',
+    description2: 'We are always available to help you. We are always available to help you.',
+  },
+];
+</script>

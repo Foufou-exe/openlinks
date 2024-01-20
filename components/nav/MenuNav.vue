@@ -79,13 +79,7 @@ const components: { title: string; href: string; description: string; icons: str
     href: '/#security',
     description: 'Openlinks prioritises the security of its users data',
   },
-  {
-    title: 'Alert Dialog',
-    icons: 'circum:stethoscope',
-    href: '/docs/primitives/alert-dialog',
-    description:
-      'A modal dialog that interrupts the user with important content and expects a response.',
-  },
+
 ]
 
 const componentsHelp: { title: string; href: string; description: string; icons: string; }[] = [

@@ -1,7 +1,7 @@
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
-      <Button variant="ghost" class="sm:flex md:flex ">
+      <Button variant="ghost" class="sm:flex md:flex lg:hidden">
         <Icon name="circum:menu-kebab" class="text-xl" />
       </Button>
     </DropdownMenuTrigger>
@@ -60,7 +60,7 @@
             {{ osStore.shortcutSymbol }}+Alt+N
           </DropdownMenuShortcut>
         </DropdownMenuItem>
-        <DropdownMenuItem>
+        <!-- <DropdownMenuItem>
           <a href="/faq" class="flex items-center justify-center space-x-1 mr-2">
             <Icon name="circum:square-question" class="text-lg" />
             <span>Feature 1</span>
@@ -77,7 +77,7 @@
           <DropdownMenuShortcut>
             {{ osStore.shortcutSymbol }}+Alt+F
           </DropdownMenuShortcut>
-        </DropdownMenuItem>
+        </DropdownMenuItem> -->
       </DropdownMenuGroup>
       <DropdownMenuSeparator />
       <DropdownMenuGroup>

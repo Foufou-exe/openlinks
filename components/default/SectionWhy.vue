@@ -11,13 +11,13 @@
                         Openlinks offers you a
                     </span>
                     <br>
-                    <span>
-                        Faster and Safer browsing experience
+                    <span ref="target">
+                        <span id="rough1">Faster</span> and <span id="rough2">Safer</span> browsing experience
                     </span>
                 </div>
             </div>
         </div>
-
+        
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-fr">
             <CardWhyVue 
                 v-for="(component, index) in componentsHelp"
@@ -30,10 +30,28 @@
     </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import CardWhyVue from '@/components/default/why/CardWhy.vue.vue';
+import { annotate, annotationGroup } from 'rough-notation'
+import { onMounted, ref } from 'vue'
+import { useIntersectionObserver } from '@vueuse/core'
 
-const componentsHelp: { title: string; description: string; icons: string; }[] = [
+const target = ref(null)
+const targetIsVisible = ref(false)
+
+
+useIntersectionObserver(target, ([{ isIntersecting }]) => {
+  targetIsVisible.value = isIntersecting
+  const rough1 = annotate(target.value.querySelector('#rough1'), { type: 'highlight', color: '#17c18f', animationDuration: 2000, padding: 0 })
+  const rough2 = annotate(target.value.querySelector('#rough2'), { type: 'highlight', color: '#17c18f', animationDuration: 2000, padding: 0 })
+  const ag = annotationGroup([rough1, rough2]);
+  if (isIntersecting) {
+    ag.show()
+  }
+})
+
+
+const componentsHelp = [
   {
     title: 'Uncompromising safety',
     icons: 'circum:lock',
@@ -72,3 +90,4 @@ const componentsHelp: { title: string; description: string; icons: string; }[] =
   },
 ]
 </script>
+

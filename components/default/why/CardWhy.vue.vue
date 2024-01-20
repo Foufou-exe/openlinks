@@ -1,5 +1,5 @@
 <template>
-    <div class="p-5 border rounded-lg">
+    <div class="p-5 border rounded-lg shadow-md">
         <div class="flex items-center space-x-3">
             <Icon :name="icons" class="text-4xl" />
             <span class="font-semibold text-lg">
