@@ -2,12 +2,21 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         <div class="col-span-full mb-10">
             <div class="flex flex-col lg:flex-row justify-center items-center space-y-3 lg:space-y-0 lg:space-x-3 p-5 text-center lg:text-left">
-                <Icon name="circum:globe" class="text-5xl mx-auto lg:mx-0" />
-                <h1 class="font-bold text-xl lg:text-3xl"> 
-                    Openlinks offers you a faster and safer browsing experience.
-                </h1>
+                <Icon name="circum:link" class="lg:text-7xl text-5xl" />
+            </div>
+            <div class="flex flex-col lg:flex-row justify-center items-center space-y-3 lg:space-y-0 lg:space-x-3 p-5 text-center">
+                <div class="text-3xl lg:text-4xl font-bold">
+                    <span>
+                        Openlinks offers you a
+                    </span>
+                    <br>
+                    <span>
+                        Faster and Safer browsing experience
+                    </span>
+                </div>
             </div>
         </div>
+
         <div class="p-5 border rounded-lg">
             <div class="flex items-center space-x-3">
                 <Icon name="circum:lock" class="text-4xl" />
@@ -43,7 +52,7 @@
             </div>
             <div class="mt-3">
                 <p class="font-thin">
-                    No matter where you are or what device you're using, OpenLinks keeps you connected to your essential information. Whether you're on the move or working from your desk, your links follow you.
+                    Stay connected to your essential information with OpenLinks, wherever you are and on any device. Your links follow you whether you're on the move or at your desk.
                 </p>
             </div>
         </div>

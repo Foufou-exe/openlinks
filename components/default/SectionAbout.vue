@@ -1,14 +1,14 @@
 <template>
     <div class="w-full md:w-55/100 lg:pt-10 space-y-5">
-        <h1 class="font-bold text-4xl leading-none md:mt-0">Organise, Share and Protect Your Favourite Links with Openlinks <span class="animate-pulse">✨</span></h1>
-        <p class="text-lg font-normal">
-            OpenLinks, your link manager for confidentiality and adaptability, is reinventing the way you back up and access your online resources. Whether you're a professional, a student or anyone else, our service makes it easy to organise and retrieve your important content, accessible anywhere and on any device.
+        <h1 class="font-bold text-4xl leading-none md:mt-0">Organise, Share and Protect your favourite links with Openlinks <span class="animate-pulse">✨</span></h1>
+        <p class="text-lg font-normal text-muted-foreground">
+            Revolutionize your online resource management with OpenLinks! Easily organize and access crucial content from any device. Ideal for professionals, students, and anyone else. Your go-to solution for confidential and adaptable link management.
         </p>
         <Dialog>
             <DialogTrigger as-child>
-                <Button type="button" class="flex items-center justify-center rounded-full ">
-                    <Icon name="circum:paperplane"  class="text-xl mr-1"/>
+                <Button type="button" class="flex items-center justify-center">
                     Get Started
+                    <Icon name="carbon:arrow-right"  class="text-xl ml-1"/>
                 </Button>
             </DialogTrigger>
             <DialogContent class="sm:max-w-[425px]">
