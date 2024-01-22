@@ -13,13 +13,15 @@
         <section id="security" class="min-h-screen mx-auto flex max-w-6xl items-center p-5 mb-10 md:px-6">
             <SectionSecurity />
         </section>
-        <section id="avis" class="mx-auto flex max-w-6xl justify-center items-center p-5 mb-10 md:px-6">
+        <section id="avis" class="min-h-screen mx-auto flex max-w-6xl justify-center items-center p-5  md:px-6">
             <SectionAvis />
         </section>
-        <section id="catchPhrase" class="mx-auto flex max-w-6xl justify-center items-center p-5 mb-10 md:px-6">
-            <SectionCatchPhrase />
-        </section>
-        <div class="bg-neutral-900/20">
+        <div class="dark:bg-neutral-900/50 bg-muted/10">
+            <section id="catchPhrase" class="min-h-screen mx-auto flex max-w-6xl justify-center items-center p-5 md:px-6">
+                <SectionCatchPhrase/>
+            </section>
+        </div>
+        <div class="dark:bg-neutral-900/20 bg-muted/10">
             <section id="start" class="min-h-screen mx-auto justify-center flex max-w-6xl items-center p-5 md:px-6">
                 <SectionStart />
             </section>

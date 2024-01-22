@@ -39,7 +39,7 @@ const currentThemeIcon = computed(() => {
   if (colorMode.preference === 'system') {
     return 'circum:laptop';
   } else {
-    return colorMode.preference === 'dark' ? 'material-symbols:wb-sunny-outline-rounded' : 'circum:dark';
+    return colorMode.preference === 'dark' ? 'ph:sun-light' : 'circum:dark';
   }
 });
 
