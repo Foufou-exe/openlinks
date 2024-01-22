@@ -13,6 +13,17 @@
         <section id="security" class="min-h-screen mx-auto flex max-w-6xl items-center p-5 mb-10 md:px-6">
             <SectionSecurity />
         </section>
+        <section id="avis" class="mx-auto flex max-w-6xl justify-center items-center p-5 mb-10 md:px-6">
+            <SectionAvis />
+        </section>
+        <section id="catchPhrase" class="mx-auto flex max-w-6xl justify-center items-center p-5 mb-10 md:px-6">
+            <SectionCatchPhrase />
+        </section>
+        <div class="bg-neutral-900/20">
+            <section id="start" class="min-h-screen mx-auto justify-center flex max-w-6xl items-center p-5 md:px-6">
+                <SectionStart />
+            </section>
+        </div>
     </div>
 </template>
 
@@ -24,7 +35,9 @@ import SectionAbout  from "@/components/default/SectionAbout.vue";
 import SectionHowDoIUseIt from "@/components/default/SectionHowDoIUseIt.vue";
 import SectionWhy from "@/components/default/SectionWhy.vue";
 import SectionSecurity from "@/components/default/SectionSecurity.vue";
-
+import SectionStart from "@/components/default/SectionStart.vue";
+import SectionAvis from "@/components/default/SectionAvis.vue";
+import SectionCatchPhrase from "@/components/default/SectionCatchPhrase.vue";
 
 useSeoMeta({
     title: 'Openlinks',

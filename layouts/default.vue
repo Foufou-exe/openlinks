@@ -16,55 +16,117 @@
   </nav>
   <slot />
 
-  <footer class="bg-muted p-10 rounded-t-md">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+  <footer class="p-10 rounded-t-md border-t">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
       <nav>
         <header class="mb-3 font-bold">Services</header>
-        <div class="flex flex-col">
-          <a class="font-thin flex items-center">
-            <Icon name="circum:share-2" class="text-lg mr-1" />
-            Link sharing
-          </a>
-        </div>
+        <ul class="space-y-4">
+          <li>
+            <a class=" flex items-center hover:underline">
+              <span>Openlinks</span>
+              <Icon name="solar:arrow-right-up-outline" class="text-sm ml-1 text-gray-500" />
+            </a>
+          </li>
+          <li>
+            <a class=" flex items-center hover:underline">
+              <span>Openlinks API</span>
+              <Icon name="solar:arrow-right-up-outline" class="text-sm ml-1 text-gray-500" />
+            </a>
+          </li>
+          <li>
+            <a class="flex items-center">
+              <!-- When the extension is available, comment on the code -->
+              <TooltipProvider>
+                <Tooltip delay-duration="200">
+                  <TooltipTrigger as-child>
+                    <Badge class="mr-1" variant="outline">
+                      🚧
+                    </Badge>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom">
+                    <p>Coming soon...</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <!-- All the code above is uncommented, you just have to comment for it to work -->
+              <span class="hover:underline">Openlinks Extension</span>
+              <Icon name="solar:arrow-right-up-outline" class="text-sm ml-1 text-gray-500" />
+            </a>
+          </li>
+        </ul>
       </nav>
       <nav>
-        <header class="mb-3 font-bold">Website</header>
-        <div class="flex flex-col">
-          <a class="font-thin flex items-center" href="/#about">
-            <Icon name="circum:home" class="text-lg mr-1" />
-            About
-          </a>
-          <a class="font-thin flex items-center" href="/support">
-            <Icon name="circum:stethoscope" class="text-lg mr-1" />
-            Support
-          </a>
-        </div>
+        <header class="mb-3 font-bold">Organisation</header>
+        <ul class="space-y-4">
+          <li>
+            <a href="/#about" class="flex items-center hover:underline">
+              <span>About</span>
+            </a>
+          </li>
+          <li>
+            <a href="/support" class="flex items-center hover:underline">
+              <span>Support</span>
+            </a>
+          </li>
+          <li>
+            <a href="/contact" class="flex items-center hover:underline">
+              <span>Contact</span>
+            </a>
+          </li>
+          <li>
+            <span class="font-bold">
+              Status
+            </span>
+          </li>
+        </ul>
       </nav>
       <nav>
         <header class="mb-3 font-bold">Legal</header>
-        <div class="flex flex-col">
-          <a class="font-thin flex items-center" href="/termsOfUse">
-            <Icon name="circum:bookmark" class="text-lg mr-1" />
-            Terms of use
-          </a>
-          <a class="font-thin flex items-center" href="/privacyPolicy">
-            <Icon name="circum:bookmark" class="text-lg mr-1" />
-            Privacy policy
-          </a>
-        </div>
+        <ul class="space-y-4">
+          <li>
+            <a href="/termsOfUse" class="flex items-center hover:underline">
+              <span>Terms of use</span>
+            </a>
+          </li>
+          <li>
+            <a href="/privacyPolicy" class="flex items-center hover:underline">
+              <span>Privacy policy</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <nav>
+        <header class="mb-3 font-bold">Community</header>
+        <ul class="space-y-4">
+          <li>
+            <a class=" flex items-center hover:underline" href="https://discord.gg/gPbUrvMnQY">
+              <span>Openlinks on Discord</span>
+              <Icon name="solar:arrow-right-up-outline" class="text-sm ml-1 text-gray-500" />
+            </a>
+          </li>
+          <li>
+            <a class=" flex items-center hover:underline"  href="https://github.com/Foufou-exe/openlinks">
+              <span>Openlinks on Github</span>
+              <Icon name="solar:arrow-right-up-outline" class="text-sm ml-1 text-gray-500" />
+            </a>
+          </li>
+        </ul>
       </nav>
     </div>
   </footer>
 
 
-  <footer class="flex justify-between px-10 py-4 border-t bg-muted border-neutral-600">
-    <aside class="items-center grid-flow-col font-thin">
-      <p>© 2024 Openlinks, Inc. ❤️</p>
+  <footer class="flex justify-between px-10 py-4 border-t">
+    <aside class="items-center grid-flow-col ">
+      <span>© 2024 Openlinks, Inc.❤️</span>
     </aside>
     <nav class="md:place-self-center md:justify-self-end">
-      <div class="grid grid-flow-col gap-4">
+      <div class="grid grid-flow-col gap-2">
+        <a href="https://discord.gg/gPbUrvMnQY">
+          <Icon name="pajamas:discord" class="text-xl md:text-2xl hover:text-[#17c18f]" />
+        </a>
         <a href="https://github.com/Foufou-exe/openlinks">
-          <Icon name="pajamas:github" class="h-6 w-6" />
+          <Icon name="pajamas:github" class="text-xl md:text-2xl hover:text-[#17c18f]" />
         </a>
       </div>
     </nav>

@@ -18,7 +18,7 @@
             </div>
         </div>
         
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-fr">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-fr ">
             <CardWhyVue 
                 v-for="(component, index) in componentsHelp"
                 :key="index"
@@ -33,7 +33,7 @@
 <script setup>
 import CardWhyVue from '@/components/default/why/CardWhy.vue.vue';
 import { annotate, annotationGroup } from 'rough-notation'
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 import { useIntersectionObserver } from '@vueuse/core'
 
 const target = ref(null)

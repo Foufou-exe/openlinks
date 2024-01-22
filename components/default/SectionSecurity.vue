@@ -2,7 +2,7 @@
   <div class="grid grid-cols-1 gap-5">
     <div class="mb-10">
       <div class="flex flex-col lg:flex-row justify-center items-center space-y-5 lg:space-y-0 lg:space-x-6">
-        <div class="bg-muted rounded-lg p-2 shadow-xl">
+        <div class="bg-[#17c18f] rounded-lg p-2 shadow-xl">
           <Icon name="circum:location-off" class="lg:text-7xl text-5xl" />
         </div>
         <div class="text-center lg:text-left">

@@ -8,7 +8,7 @@
             <li class="row-span-3">
               <NavigationMenuLink as-child>
                 <a
-                  class="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                  class="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-neutral p-6 no-underline outline-none focus:shadow-md hover:border-2 hover:border-[#17c18f] border-2 border-transparent"
                   href="/"
                 >
                   <img src="/icon.png" class="h-8 w-8">
