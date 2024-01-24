@@ -13,9 +13,6 @@
         <section id="security" class="min-h-screen mx-auto flex max-w-6xl items-center p-5 mb-10 md:px-6">
             <SectionSecurity />
         </section>
-        <section id="avis" class="min-h-screen mx-auto flex max-w-6xl justify-center items-center p-5  md:px-6">
-            <SectionAvis />
-        </section>
         <div class="dark:bg-neutral-900/50 bg-muted/10">
             <section id="catchPhrase" class="min-h-screen mx-auto flex max-w-6xl justify-center items-center p-5 md:px-6">
                 <SectionCatchPhrase/>
@@ -38,7 +35,6 @@ import SectionHowDoIUseIt from "@/components/default/SectionHowDoIUseIt.vue";
 import SectionWhy from "@/components/default/SectionWhy.vue";
 import SectionSecurity from "@/components/default/SectionSecurity.vue";
 import SectionStart from "@/components/default/SectionStart.vue";
-import SectionAvis from "@/components/default/SectionAvis.vue";
 import SectionCatchPhrase from "@/components/default/SectionCatchPhrase.vue";
 
 useSeoMeta({
