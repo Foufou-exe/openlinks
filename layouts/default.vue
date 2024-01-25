@@ -4,10 +4,10 @@
       <ButtonDropdown />
       <LinkLogo class="max-sm:hidden md:hidden lg:flex" />
     </div>
-    <div class="hidden lg:flex space-x-1 rounded-lg justify-center items-center p-1">
+    <div class="hidden lg:flex space-x-1  justify-center items-center p-1">
       <MenuNav />
     </div>
-    <div class="flex space-x-1 rounded-lg justify-center items-center p-1">
+    <div class="flex space-x-1 justify-center items-center p-1">
       <ButtonSearch />
       <ButtonThemeNav />
       <ButtonGithub />

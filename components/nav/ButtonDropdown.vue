@@ -60,24 +60,6 @@
             {{ osStore.shortcutSymbol }}+Alt+N
           </DropdownMenuShortcut>
         </DropdownMenuItem>
-        <!-- <DropdownMenuItem>
-          <a href="/faq" class="flex items-center justify-center space-x-1 mr-2">
-            <Icon name="circum:square-question" class="text-lg" />
-            <span>Feature 1</span>
-          </a>
-          <DropdownMenuShortcut>
-            {{ osStore.shortcutSymbol }}+Alt+F
-          </DropdownMenuShortcut>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <a href="/faq" class="flex items-center justify-center space-x-1 mr-2">
-            <Icon name="circum:square-question" class="text-lg" />
-            <span>Feature 1</span>
-          </a>
-          <DropdownMenuShortcut>
-            {{ osStore.shortcutSymbol }}+Alt+F
-          </DropdownMenuShortcut>
-        </DropdownMenuItem> -->
       </DropdownMenuGroup>
       <DropdownMenuSeparator />
       <DropdownMenuGroup>
