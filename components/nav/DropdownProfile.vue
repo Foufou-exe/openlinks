@@ -47,11 +47,6 @@
           <span>Invite Friends</span>
           <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
         </DropdownMenuItem>
-        <DropdownMenuItem>
-            <Icon name="circum:stethoscope" class="text-xl flex justify-center items-center mr-2"/>
-            <span>Support</span>
-            <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
-        </DropdownMenuItem>
       </DropdownMenuGroup>
       <DropdownMenuSeparator />
       <DropdownMenuItem>
