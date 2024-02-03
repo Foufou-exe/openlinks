@@ -144,8 +144,7 @@
           <div>
             <div class="flex space-x-3 justify-center items-center">
               <NuxtImg src="/images/profile/user3.png" class="w-14 h-14 rounded-xl" />
-              <span class="break-words line-clamp-2 text-2xl font-bold">Openlinks vient de lancée son site en
-                direct</span>
+              <span class="break-words line-clamp-2 leading-none text-xl font-bold">Openlinks vient de lancée son site en direct</span>
             </div>
             <div class="space-x-1 mt-1">
               <Badge>
