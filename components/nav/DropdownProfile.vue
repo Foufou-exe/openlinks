@@ -1,7 +1,7 @@
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger>
-        <TooltipProvider>
+        <TooltipProvider :delay-duration="200">
         <Tooltip>
             <TooltipTrigger as-child>
                 <div class="flex bg-muted rounded-lg">

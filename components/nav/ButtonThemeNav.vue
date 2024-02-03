@@ -1,5 +1,5 @@
 <template>
-  <TooltipProvider>
+  <TooltipProvider :delay-duration="200">
     <Tooltip>
       <TooltipTrigger as-child>
         <Button @click="toggleTheme" variant="ghost" :class="colorMode.preference === 'dark' ? 'theme-light' : 'theme-dark' ">
