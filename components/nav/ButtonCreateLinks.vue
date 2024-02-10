@@ -1,10 +1,19 @@
 <template>
   <div>
     <Dialog>
-      <DialogTrigger as-child>
-        <Button>
-          Create Link
-        </Button>
+      <DialogTrigger>
+        <TooltipProvider :delay-duration="200">
+          <Tooltip>
+            <TooltipTrigger as-child>
+              <Button>
+                Create Link
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent side="bottom">
+              <span class="text-sm font-semibold">Add link to your news feed or your teams</span>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>

@@ -1,12 +1,9 @@
 <template>
-  <div class="p-3 border-b mb-5 flex justify-between items-center">
+  <div
+    class="p-3 border-b mb-5 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-3 sm:space-y-0">
     <div>
-      <div>
-        <span class="text-3xl font-bold">My Links</span>
-      </div>
-      <div>
-        <span class="text-sm text-gray-500">All your links are here</span>
-      </div>
+      <h1 class="text-xl sm:text-3xl font-bold">My Links</h1>
+      <p class="text-xs sm:text-sm text-gray-500">All your links are here</p>
     </div>
     <div>
       <DropdownMenu>
@@ -24,33 +21,61 @@
             </Tooltip>
           </TooltipProvider>
         </DropdownMenuTrigger>
-        <DropdownMenuContent class="w-50 mr-1" align="end">
+        <DropdownMenuContent class="w-50 mr-1 p-1" align="end">
           <DropdownMenuGroup>
-            <DropdownMenuItem>
-              <Icon name="circum:calendar-date" class="text-xl flex justify-center items-center mr-2" />
+            <DropdownMenuItem class="hover:font-semibold">
+              <Icon name="circum:calendar-date" class="text-xl flex justify-center items-center mr-2 hover" />
               <span>Date (Recent to Old)</span>
             </DropdownMenuItem>
-            <DropdownMenuItem>
+            <DropdownMenuItem class="hover:font-semibold">
               <Icon name="circum:calendar" class="text-xl flex justify-center items-center mr-2" />
               <span>Date (Old to Recent)</span>
             </DropdownMenuItem>
-            <DropdownMenuItem>
+            <DropdownMenuItem class="hover:font-semibold">
               <Icon name="circum:file-on" class="text-xl flex justify-center items-center mr-2" />
               <span>Title (A-Z)</span>
             </DropdownMenuItem>
-            <DropdownMenuItem>
+            <DropdownMenuItem class="hover:font-semibold">
               <Icon name="circum:file-on" class="text-xl flex justify-center items-center mr-2" />
               <span>Title (Z-A)</span>
             </DropdownMenuItem>
           </DropdownMenuGroup>
         </DropdownMenuContent>
       </DropdownMenu>
-
     </div>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-5 ">
-    <a href="" title="" rel="noopener" target="_blank">
-      <Card class="rounded-3xl">
+
+  <div class="flex justify-center items-center min-h-screen">
+    <div>
+      <div class="space-y-14 flex flex-col justify-center items-center">
+        <div class="flex space-x-5 group">
+
+          <div class="border dark:bg-neutral-900/50 bg-neutral-100 px-6 py-10 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 hover:z-10 relative hover:border-green-500 ">
+            <Icon name="circum:star" class="text-4xl text-gray-500 dark:hover:text-yellow-300 hover:text-yellow-500" />
+          </div>
+
+          <div class="border dark:bg-neutral-900/50 bg-neutral-100 px-6 py-10 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 hover:z-10 hover:border-green-500 relative shadow-2xl transform -translate-y-4">
+            <Icon name="circum:link" class="text-4xl text-gray-500 hover:text-gray-400" />
+          </div>
+
+          <div class="border dark:bg-neutral-900/50 bg-neutral-100 px-6 py-10 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 hover:z-10 relative hover:border-green-500">
+            <Icon name="circum:share-2" class="text-4xl text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 " />
+          </div>
+        </div>
+        <span class="font-semibold text-xl">
+          Save your first link by clicking on the <span class="p-2 border rounded-xl font-bold">Create Link</span>
+          button.
+        </span>
+        <ButtonCreateLinks />
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4 gap-5">
+    <a href="" title="" rel="noopener" target="_blank" class="rounded-3xl group max-w-[350px]"
+      @mouseenter="showButtons = true" @mouseleave="showButtons = false">
+      <Card class="rounded-3xl hover:shadow-xl">
         <CardHeader class="p-3">
           <div class="flex justify-between items-center">
             <div class="flex space-x-2">
@@ -100,13 +125,13 @@
               </div>
             </div>
             <div class="flex space-x-2">
-              <Button class="space-x-2" size="sm">
+              <Button class="space-x-2" size="sm" v-show="showButtons">
                 <span class="font-bold">Go Link</span>
                 <Icon name="circum:export" class="text-lg" />
               </Button>
               <DropdownMenu>
                 <DropdownMenuTrigger>
-                  <Button variant="secondary" class="mb-1" size="sm">
+                  <Button variant="ghost" class="mb-1" size="sm" v-show="showButtons">
                     <Icon name="circum:menu-kebab" class="text-xl" />
                   </Button>
                 </DropdownMenuTrigger>
@@ -144,7 +169,8 @@
           <div>
             <div class="flex space-x-3 justify-center items-center">
               <NuxtImg src="/images/profile/user3.png" class="w-14 h-14 rounded-xl" />
-              <span class="break-words line-clamp-2 leading-none text-xl font-bold">Openlinks vient de lancée son site en direct</span>
+              <span class="break-words line-clamp-2 leading-none text-xl font-bold">Openlinks vient de lancée son site en
+                direct</span>
             </div>
             <div class="space-x-1 mt-1">
               <Badge>
@@ -175,19 +201,17 @@
         </CardContent>
       </Card>
     </a>
-
-  </div>
+  </div> -->
 </template>
 
 <script setup lang="ts">
-// import Card from '@/components/dashboard/feed/Card.vue'
-
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from '@/components/ui/hover-card'
 
+import ButtonCreateLinks from '@/components/nav/ButtonCreateLinks.vue'
 
 definePageMeta({
   layout: 'dashboard-layout',
@@ -202,4 +226,6 @@ useHead({
     },
   ],
 })
+
+const showButtons = ref(false)
 </script>

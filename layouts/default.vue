@@ -22,7 +22,7 @@
         <header class="mb-3 font-bold">Services</header>
         <ul class="space-y-4">
           <li>
-            <a class=" flex items-center hover:underline">
+            <a class="flex items-center hover:underline" href="https://github.com/Foufou-exe/openlinks">
               <span>Openlinks</span>
               <Icon name="solar:arrow-right-up-outline" class="text-sm ml-1 text-gray-500" />
             </a>
