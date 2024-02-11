@@ -21,9 +21,11 @@
             <li class="flex items-center py-1 space-x-2 px-4 text-lg font-semibold tracking-tight">
               <span class="">Private</span>
             </li>
-            <Button variant="ghost" class="w-full justify-start">
-              <Icon name="circum:link" class="text-xl" />
-              <span class="ml-2">My links</span>
+            <Button variant="ghost" class="w-full justify-start" as-child>
+              <a href="/dashboard">
+                <Icon name="circum:link" class="text-xl" />
+                <span class="ml-2">My links</span>
+              </a>
             </Button>
             <Button variant="ghost" class="w-full justify-start">
               <Icon name="carbon:collapse-categories" class="text-xl" />

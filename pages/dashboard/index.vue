@@ -15,7 +15,7 @@
 
         <Popover v-model:open="open">
           <PopoverTrigger as-child>
-            <Button variant="outline" role="combobox" :aria-expanded="open" class="w-[120px] justify-between">
+            <Button variant="outline" role="combobox" :aria-expanded="open" class="w-[110px] justify-between">
               Category
               <ChevronsUpDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
             </Button>
