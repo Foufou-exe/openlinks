@@ -47,15 +47,15 @@
         <div>
           <div class="flex justify-start">
             <div class="flex space-x-3 justify-center items-center">
-            <NuxtImg src="/images/profile/user3.png" class="w-14 h-14 rounded-xl" />
+            <NuxtImg :src="imageLink" class="w-14 h-14 rounded-xl" />
             <span class="break-words line-clamp-2 leading-none text-xl font-bold">
               {{ titleLink }}
             </span>
           </div>
           </div>
           <div class="space-x-1 mt-1">
-            <Badge :class="styleBadge">
-              {{ category }}
+            <Badge  v-for="nameCategory in category" >
+              {{ nameCategory }}
             </Badge>
           </div>
         </div>
@@ -73,13 +73,6 @@
 </template>
   
 <script lang="ts" setup>
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from '@/components/ui/hover-card'
-
-
 const showButtons = ref(false)
 
 defineProps({
@@ -92,7 +85,7 @@ defineProps({
     required: true
   },
   category: {
-    type: String,
+    type: Array,
     required: true
   },
   descriptionLink: {
@@ -111,8 +104,12 @@ defineProps({
     type: String,
     required: true
   },
-  styleBadge: {
+  // styleBadge: {
+  //   type: String,
+  // },
+  imageLink: {
     type: String,
+    required: true
   }
 })
 </script>

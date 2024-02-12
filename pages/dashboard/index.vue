@@ -21,21 +21,21 @@
             </Button>
           </PopoverTrigger>
           <PopoverContent class="w-[200px] p-0">
-            <Command>
+            <Command multiple>
               <CommandInput class="h-9" placeholder="Search category ✨" />
               <CommandEmpty>No Cateory found 😥</CommandEmpty>
               <CommandList>
                 <CommandGroup>
-                  <CommandItem v-for="framework in frameworks" :key="framework.value" :value="framework.value" @select="(ev) => {
-                    if (typeof ev.detail.value === 'string') {
-                      value = ev.detail.value
-                    }
-                    open = false
-                  }">
+                  <CommandItem @select="resetCategories">
+                    All
+                  </CommandItem>
+                  <CommandItem multi-selectable v-for="framework in category"
+                    :key="framework.value"
+                    @select="() => toggleCategory(framework.value)">
                     {{ framework.label }}
                     <Check :class="cn(
                       'ml-auto h-4 w-4',
-                      value === framework.value ? 'opacity-100' : 'opacity-0',
+                      selectedCategory.includes(framework.value) ? 'opacity-100' : 'opacity-0',
                     )" />
                   </CommandItem>
                 </CommandGroup>
@@ -45,7 +45,7 @@
         </Popover>
 
         <DropdownMenu>
-          <DropdownMenuTrigger>
+          <DropdownMenuTrigger as="button">
             <TooltipProvider :delay-duration="200">
               <Tooltip>
                 <TooltipTrigger as-child>
@@ -61,19 +61,19 @@
           </DropdownMenuTrigger>
           <DropdownMenuContent class="w-50 mr-1 p-1" align="end">
             <DropdownMenuGroup>
-              <DropdownMenuItem class="hover:font-semibold">
+              <DropdownMenuItem class="hover:font-semibold" @click="setFilterCriteria('recentToOld')">
                 <Icon name="circum:calendar-date" class="text-xl flex justify-center items-center mr-2 hover" />
                 <span>Date (Recent to Old)</span>
               </DropdownMenuItem>
-              <DropdownMenuItem class="hover:font-semibold">
+              <DropdownMenuItem class="hover:font-semibold" @click="setFilterCriteria('oldToRecent')">
                 <Icon name="circum:calendar" class="text-xl flex justify-center items-center mr-2" />
                 <span>Date (Old to Recent)</span>
               </DropdownMenuItem>
-              <DropdownMenuItem class="hover:font-semibold">
+              <DropdownMenuItem class="hover:font-semibold" @click="setFilterCriteria('titleAZ')">
                 <Icon name="circum:file-on" class="text-xl flex justify-center items-center mr-2" />
                 <span>Title (A-Z)</span>
               </DropdownMenuItem>
-              <DropdownMenuItem class="hover:font-semibold">
+              <DropdownMenuItem class="hover:font-semibold" @click="setFilterCriteria('titleZA')">
                 <Icon name="circum:file-on" class="text-xl flex justify-center items-center mr-2" />
                 <span>Title (Z-A)</span>
               </DropdownMenuItem>
@@ -84,82 +84,96 @@
     </div>
   </div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4 4xl:grid-cols-6 gap-5 justify-items-center">
-    <CardLinks 
-      v-for="link in links" 
-      :key="link.id" 
-      :titleLink="link.title" 
-      :category="link.category" 
-      :date="link.date" 
-      :time="link.time"
-      :imagesLink="link.images"
-      :styleBadge="link.styleBadge" 
-      :hrefLink="link.href" 
-      :descriptionLink="link.description" 
-
-    />
+  <div
+    class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4 4xl:grid-cols-6 gap-5 justify-items-center">
+    <CardLinks v-for="link in filteredLinks" :key="link.id" :titleLink="link.title" :category="link.category"
+      :date="link.date" :time="link.time" :imagesLink="link.images" :styleBadge="link.styleBadge" :hrefLink="link.href"
+      :descriptionLink="link.description" :imageLink="link.imageLink" />
   </div>
 </template>
 
 <script setup lang="ts">
 import CardLinks from '~/components/dashboard/default/mylinks/CardLinks.vue';
-
-import { ref } from 'vue'
 import { Check, ChevronsUpDown } from 'lucide-vue-next'
 import { cn } from '@/lib/utils'
 
-
-const frameworks = [
-  { value: 'next.js', label: 'Next.js' },
+// Category for the filter
+const category = [
+  { value: 'Html', label: 'HTML' },
   { value: 'sveltekit', label: 'SvelteKit' },
   { value: 'nuxt.js', label: 'Nuxt.js' },
   { value: 'remix', label: 'Remix' },
   { value: 'astro', label: 'Astro' },
 ]
+// Popover Default
 
-const open = ref(false)
-const value = ref<string>('')
+const open = ref(false);
+const selectedCategory = ref<string[]>([]);
 
-const links: { id: number, title: string, category: string, date: string, time: string, styleBadge: string, href: string, description: string, images: string }[] = [
+const toggleCategory = (category: string) => {
+  const index = selectedCategory.value.indexOf(category);
+  if (index === -1) {
+    selectedCategory.value.push(category);
+  } else {
+    selectedCategory.value.splice(index, 1);
+  }
+};
+
+const resetCategories = () => {
+  selectedCategory.value = [];
+};
+
+
+
+
+// Filter Criteria
+const filterCriteria = ref<string>('recentToOld');
+
+
+const links: { id: number, title: string, category: string[], date: string, time: string, styleBadge: string, href: string, description: string, images: string, imageLink: string }[] = [
   {
     id: 1,
     title: 'How to use Openlinks',
     images: '/images/banniere/banniere-exemple.jpg',
-    category: 'Article',
-    date: '2022-10-10',
+    imageLink: '/images/profile/user1.png',
+    category: ['Html', 'Css', 'Javascript'],
+    date: '2022-10-20',
     time: '10:10',
-    styleBadge: 'bg-green-500',
+    styleBadge: 'bg-blue-500',
     href: '/article/how-to-use-openlinks',
     description: 'Openlinks is a project designed to bring together new articles, shared links and much more.',
   },
   {
     id: 2,
-    title: 'How to use Openlinks',
+    title: 'Ah oui',
     images: '/images/banniere/banniere-exemple.jpg',
-    category: 'Article',
-    date: '2022-10-10',
+    imageLink: '/images/profile/user2.png',
+    category: ['Html', 'Css', 'Javascript', 'Sveltekit'],
+    date: '2022-10-15',
     time: '10:10',
-    styleBadge: 'bg-green-500',
+    styleBadge: 'bg-orange-500',
     href: '/article/how-to-use-openlinks',
     description: 'Openlinks is a project designed to bring together new articles, shared links and much more.',
   },
   {
     id: 3,
-    title: 'How to use Openlinks',
+    title: 'Libre',
     images: '/images/banniere/banniere-exemple.jpg',
-    category: 'Article',
+    imageLink: '/images/profile/user3.png',
+    category: ['Html', 'Css', 'Javascript', 'Sveltekit', 'Nuxt.js'],
     date: '2022-10-10',
     time: '10:10',
-    styleBadge: 'bg-green-500',
+    styleBadge: 'bg-blue-300',
     href: '/article/how-to-use-openlinks',
     description: 'Openlinks is a project designed to bring together new articles, shared links and much more.',
   },
   {
     id: 4,
-    title: 'How to use Openlinks',
+    title: 'Ok',
     images: '/images/banniere/banniere-exemple.jpg',
-    category: 'Article',
-    date: '2022-10-10',
+    imageLink: '/images/profile/user4.png',
+    category: ['Html', 'Css', 'Javascript', 'Sveltekit'],
+    date: '2022-10-13',
     time: '10:10',
     styleBadge: 'bg-green-500',
     href: '/article/how-to-use-openlinks',
@@ -167,10 +181,11 @@ const links: { id: number, title: string, category: string, date: string, time: 
   },
   {
     id: 5,
-    title: 'How to use Openlinks',
+    title: 'Peut etre que oui peut etre que non',
     images: '/images/banniere/banniere-exemple.jpg',
-    category: 'Article',
-    date: '2022-10-10',
+    imageLink: '/images/profile/user1.png',
+    category: ['Html', 'Css', 'Javascript', 'Sveltekit', 'Nuxt.js'],
+    date: '2022-10-12',
     time: '10:10',
     styleBadge: 'bg-green-500',
     href: '/article/how-to-use-openlinks',
@@ -178,21 +193,53 @@ const links: { id: number, title: string, category: string, date: string, time: 
   },
   {
     id: 6,
-    title: 'How to use Openlinks',
+    title: 'Test d un titre',
     images: '/images/banniere/banniere-exemple.jpg',
-    category: 'Article',
-    date: '2022-10-10',
+    imageLink: '/images/profile/user2.png',
+    category: ['Html', 'Css', 'Javascript', 'Sveltekit', 'Nuxt.js', 'Remix'],
+    date: '2022-10-11',
     time: '10:10',
-    styleBadge: 'bg-green-500',
+    styleBadge: 'bg-purple-500',
     href: '/article/how-to-use-openlinks',
     description: 'Openlinks is a project designed to bring together new articles, shared links and much more.',
   },
-]
+];
 
+// Filtered Links
+const filteredLinks = computed(() => {
+  let filtered = links; // Start with all the links
+  // Filter by date or title
+  switch (filterCriteria.value) {
+    case 'recentToOld':
+      filtered = filtered.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+      break;
+    case 'oldToRecent':
+      filtered = filtered.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+      break;
+    case 'titleAZ':
+      filtered = filtered.sort((a, b) => a.title.localeCompare(b.title));
+      break;
+    case 'titleZA':
+      filtered = filtered.sort((a, b) => b.title.localeCompare(a.title));
+      break;
+  }
+  // Additional filter by category
+  return selectedCategory.value.length > 0
+    ? links.filter(link => selectedCategory.value.includes(link.category.join(' ')))
+    : links;
+});
+
+// Set Filter Criteria
+const setFilterCriteria = (criteria: string) => {
+  filterCriteria.value = criteria;
+};
+
+
+// Page Meta
 definePageMeta({
   layout: 'dashboard-layout',
 })
-
+// Head
 useHead({
   title: 'Openlinks - Dashboard',
   meta: [
