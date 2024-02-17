@@ -6,10 +6,10 @@
       <p class="text-xs sm:text-sm text-gray-500">All your links are here</p>
     </div>
     <div>
-      <div class="flex space-x-2 justify-center">
+      <div class="flex space-x-2 justify-center flex-wrap max-sm:space-y-2">
 
         <div class="flex justify-center items-center space-x-2">
-          <Icon name="circum:search" class="text-3xl" />
+          <Icon name="circum:search" class="text-2xl sm:text-3xl" />
           <Input type="search" placeholder="Search..." />
         </div>
 
@@ -26,18 +26,17 @@
               <CommandEmpty>No Cateory found 😥</CommandEmpty>
               <CommandList>
                 <CommandGroup>
-                  <CommandItem @select="resetCategories">
+                  <!-- <CommandItem @select="resetCategories">
                     All
                   </CommandItem>
-                  <CommandItem multi-selectable v-for="framework in category"
-                    :key="framework.value"
+                  <CommandItem multi-selectable v-for="framework in category" :key="framework.value"
                     @select="() => toggleCategory(framework.value)">
                     {{ framework.label }}
                     <Check :class="cn(
                       'ml-auto h-4 w-4',
                       selectedCategory.includes(framework.value) ? 'opacity-100' : 'opacity-0',
                     )" />
-                  </CommandItem>
+                  </CommandItem> -->
                 </CommandGroup>
               </CommandList>
             </Command>
@@ -86,9 +85,13 @@
 
   <div
     class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4 4xl:grid-cols-6 gap-5 justify-items-center">
-    <CardLinks v-for="link in filteredLinks" :key="link.id" :titleLink="link.title" :category="link.category"
-      :date="link.date" :time="link.time" :imagesLink="link.images" :styleBadge="link.styleBadge" :hrefLink="link.href"
-      :descriptionLink="link.description" :imageLink="link.imageLink" />
+    <CardLinks 
+      v-for="link in filteredLinks" :key="link.id" 
+      :titleLink="link.title" :category="link.category"
+      :date="link.date" :time="link.time" 
+      :imagesLink="link.images" :hrefLink="link.href"
+      :descriptionLink="link.description" :imageLink="link.imageLink" 
+    />
   </div>
 </template>
 
@@ -108,20 +111,20 @@ const category = [
 // Popover Default
 
 const open = ref(false);
-const selectedCategory = ref<string[]>([]);
+// const selectedCategory = ref<string[]>([]);
 
-const toggleCategory = (category: string) => {
-  const index = selectedCategory.value.indexOf(category);
-  if (index === -1) {
-    selectedCategory.value.push(category);
-  } else {
-    selectedCategory.value.splice(index, 1);
-  }
-};
+// const toggleCategory = (category: string) => {
+//   const index = selectedCategory.value.indexOf(category);
+//   if (index === -1) {
+//     selectedCategory.value.push(category);
+//   } else {
+//     selectedCategory.value.splice(index, 1);
+//   }
+// };
 
-const resetCategories = () => {
-  selectedCategory.value = [];
-};
+// const resetCategories = () => {
+//   selectedCategory.value = [];
+// };
 
 
 
@@ -130,7 +133,10 @@ const resetCategories = () => {
 const filterCriteria = ref<string>('recentToOld');
 
 
-const links: { id: number, title: string, category: string[], date: string, time: string, styleBadge: string, href: string, description: string, images: string, imageLink: string }[] = [
+
+// Filtered Links
+const filteredLinks = computed(() => {
+  const links: { id: number, title: string, category: string[], date: string, time: string, styleBadge: string, href: string, description: string, images: string, imageLink: string }[] = [
   {
     id: 1,
     title: 'How to use Openlinks',
@@ -196,7 +202,7 @@ const links: { id: number, title: string, category: string[], date: string, time
     title: 'Test d un titre',
     images: '/images/banniere/banniere-exemple.jpg',
     imageLink: '/images/profile/user2.png',
-    category: ['Html', 'Css', 'Javascript', 'Sveltekit', 'Nuxt.js', 'Remix'],
+    category: ['Html', 'Css', 'Javascript', 'Sveltekit', 'Nuxt.js', 'Remix', 'Astro', 'Sveltekit', 'Nuxt.js', 'Remix', 'Astro'],
     date: '2022-10-11',
     time: '10:10',
     styleBadge: 'bg-purple-500',
@@ -204,9 +210,6 @@ const links: { id: number, title: string, category: string[], date: string, time
     description: 'Openlinks is a project designed to bring together new articles, shared links and much more.',
   },
 ];
-
-// Filtered Links
-const filteredLinks = computed(() => {
   let filtered = links; // Start with all the links
   // Filter by date or title
   switch (filterCriteria.value) {
@@ -223,10 +226,7 @@ const filteredLinks = computed(() => {
       filtered = filtered.sort((a, b) => b.title.localeCompare(a.title));
       break;
   }
-  // Additional filter by category
-  return selectedCategory.value.length > 0
-    ? links.filter(link => selectedCategory.value.includes(link.category.join(' ')))
-    : links;
+  return filtered;
 });
 
 // Set Filter Criteria
