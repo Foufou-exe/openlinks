@@ -1,136 +1,218 @@
 <template>
-  <div
-    class="p-3 border-b mb-5 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-3 sm:space-y-0">
-    <div>
-      <h1 class="text-xl sm:text-3xl font-bold">My Links</h1>
-      <p class="text-xs sm:text-sm text-gray-500">All your links are here</p>
-    </div>
-    <div>
-      <div class="flex space-x-2 justify-center flex-wrap max-sm:space-y-2">
-
-        <div class="flex justify-center items-center space-x-2">
-          <Icon name="circum:search" class="text-2xl sm:text-3xl" />
-          <Input type="search" placeholder="Search..." />
+  <div class="space-y-10">
+    <div class="flex justify-between items-center border-b pb-5">
+      <div class="flex justify-items-center justify-start items-center space-x-1">
+        <div>
+          <Icon name="circum:home" class="text-4xl sm:text-5xl" />
         </div>
+        <div>
+          <h1 class="text-lg sm:text-xl md:text-2xl font-bold">Dashboard</h1>
+          <span class="text-xs sm:text-sm text-gray-500">
+            Welcome to your dashboard. Here you can manage your links and see your statistics.
+          </span>
+        </div>
+      </div>
 
-        <Popover v-model:open="open">
-          <PopoverTrigger as-child>
-            <Button variant="outline" role="combobox" :aria-expanded="open" class="w-[110px] justify-between">
-              Category
-              <ChevronsUpDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent class="w-[200px] p-0">
-            <Command multiple>
-              <CommandInput class="h-9" placeholder="Search category ✨" />
-              <CommandEmpty>No Cateory found 😥</CommandEmpty>
-              <CommandList>
-                <CommandGroup>
-                  <!-- <CommandItem @select="resetCategories">
-                    All
-                  </CommandItem>
-                  <CommandItem multi-selectable v-for="framework in category" :key="framework.value"
-                    @select="() => toggleCategory(framework.value)">
-                    {{ framework.label }}
-                    <Check :class="cn(
-                      'ml-auto h-4 w-4',
-                      selectedCategory.includes(framework.value) ? 'opacity-100' : 'opacity-0',
-                    )" />
-                  </CommandItem> -->
-                </CommandGroup>
-              </CommandList>
-            </Command>
-          </PopoverContent>
-        </Popover>
-
-        <DropdownMenu>
-          <DropdownMenuTrigger as="button">
-            <TooltipProvider :delay-duration="200">
-              <Tooltip>
-                <TooltipTrigger as-child>
-                  <Button variant="secondary">
-                    <Icon name="circum:filter" class="text-xl" />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent align="center" side="bottom">
-                  <span class="text-sm font-semibold">Filter</span>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent class="w-50 mr-1 p-1" align="end">
-            <DropdownMenuGroup>
-              <DropdownMenuItem class="hover:font-semibold" @click="setFilterCriteria('recentToOld')">
-                <Icon name="circum:calendar-date" class="text-xl flex justify-center items-center mr-2 hover" />
-                <span>Date (Recent to Old)</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem class="hover:font-semibold" @click="setFilterCriteria('oldToRecent')">
-                <Icon name="circum:calendar" class="text-xl flex justify-center items-center mr-2" />
-                <span>Date (Old to Recent)</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem class="hover:font-semibold" @click="setFilterCriteria('titleAZ')">
-                <Icon name="circum:file-on" class="text-xl flex justify-center items-center mr-2" />
-                <span>Title (A-Z)</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem class="hover:font-semibold" @click="setFilterCriteria('titleZA')">
-                <Icon name="circum:file-on" class="text-xl flex justify-center items-center mr-2" />
-                <span>Title (Z-A)</span>
-              </DropdownMenuItem>
-            </DropdownMenuGroup>
-          </DropdownMenuContent>
-        </DropdownMenu>
+      <div class="flex justify-center items-center">
+          <Tabs default-value="grid">
+            <TabsList>
+              <TabsTrigger value="grid">
+                <Icon name="circum:grid-4-1" class="text-2xl" />
+              </TabsTrigger>
+              <TabsTrigger value="line">
+                <Icon name="circum:grid-2-h" class="text-2xl" />
+              </TabsTrigger>
+            </TabsList>
+          </Tabs>
       </div>
     </div>
-  </div>
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+      <Card>
+        <CardHeader class="flex flex-row items-center justify-between space-y-0 pb-1">
+          <CardTitle class="text-xl font-medium ">
+            Links
+          </CardTitle>
+          <Icon name="circum:link" class="text-4xl border rounded-md p-1" />
+        </CardHeader>
+        <CardContent class="flex flex-col justify-center">
+          <div class="pb-1">
+            <span class="text-5xl font-bold">
+              120
+            </span>
+          </div>
+          <div class=" pb-1">
+            <p class="text-xs text-muted-foreground">
+              Total Links
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader class="flex flex-row items-center justify-between space-y-0 pb-1">
+          <CardTitle class="text-xl font-medium ">
+            Favours
+          </CardTitle>
+          <Icon name="circum:star" class="text-4xl border rounded-md p-1" />
+        </CardHeader>
+        <CardContent class="flex flex-col justify-center">
+          <div class="pb-1">
+            <span class="text-5xl font-bold">
+              2
+            </span>
+          </div>
+          <div class="pb-1">
+            <p class="text-xs text-muted-foreground">
+              Total Favours
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader class="flex flex-row items-center justify-between space-y-0 pb-1">
+          <CardTitle class="text-xl font-medium ">
+            Categories
+          </CardTitle>
+          <Icon name="carbon:collapse-categories" class="text-4xl border rounded-md p-1" />
+        </CardHeader>
+        <CardContent class="flex flex-col justify-center">
+          <div class="pb-1">
+            <span class="text-5xl font-bold">
+              5
+            </span>
+          </div>
+          <div class="pb-1">
+            <p class="text-xs text-muted-foreground">
+              Total Categories
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader class="flex flex-row items-center justify-between space-y-0 pb-1">
+          <CardTitle class="text-xl font-medium ">
+            Directories
+          </CardTitle>
+          <Icon name="circum:folder-on" class="text-4xl border rounded-md p-1" />
+        </CardHeader>
+        <CardContent class="flex flex-col justify-center">
+          <div class="pb-1">
+            <span class="text-5xl font-bold">
+              2
+            </span>
+          </div>
+          <div class="pb-1">
+            <p class="text-xs text-muted-foreground">
+              Total directories
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
 
-  <div
-    class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4 4xl:grid-cols-6 gap-5 justify-items-center">
-    <CardLinks 
-      v-for="link in filteredLinks" :key="link.id" 
-      :titleLink="link.title" :category="link.category"
-      :date="link.date" :time="link.time" 
-      :imagesLink="link.images" :hrefLink="link.href"
-      :descriptionLink="link.description" :imageLink="link.imageLink" 
-    />
+    <div class="flex justify-between items-center border-b pb-5">
+      <div class="flex justify-items-center justify-start items-center space-x-1">
+        <div>
+          <Icon name="circum:timer" class="text-4xl sm:text-5xl" />
+        </div>
+        <div>
+          <h1 class="text-lg sm:text-xl md:text-2xl font-bold">Recent</h1>
+          <span class="text-xs sm:text-sm text-gray-500">
+            Here are your recent activities.
+          </span>
+        </div>
+      </div>
+      <div class="flex justify-center items-center">
+        <Button variant="ghost" as-child>
+          <a href="">
+            Views all
+            <Icon name="fluent:arrow-right-24-regular" class="text-lg ml-1" />
+          </a>
+        </Button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4 4xl:grid-cols-6 gap-5 justify-items-center">
+      <CardLinks 
+        v-for="link in filteredLinks" :key="link.id" 
+        :titleLink="link.title" :category="link.category"
+        :date="link.date" :time="link.time" 
+        :imagesLink="link.images" :hrefLink="link.href"
+        :descriptionLink="link.description" :imageLink="link.imageLink" 
+      />
+    </div>
+
+
+    <div class="flex justify-between items-center border-b pb-5">
+      <div class="flex justify-items-center justify-start items-center space-x-1">
+      <div>
+        <Icon name="circum:star" class="text-4xl sm:text-5xl" />
+      </div>
+      <div>
+        <h1 class="text-lg sm:text-xl md:text-2xl font-bold">Favours</h1>
+        <span class="text-xs sm:text-sm text-gray-500">
+          Here are your favourited links.
+        </span>
+      </div>
+      </div>
+      <div class="flex justify-center items-center">
+        <Button variant="ghost" as-child>
+          <a href="">
+            Views all
+            <Icon name="fluent:arrow-right-24-regular" class="text-lg ml-1" />
+          </a>
+        </Button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4 4xl:grid-cols-6 gap-5 justify-items-center">
+      <CardLinks 
+        v-for="link in filteredLinks" :key="link.id" 
+        :titleLink="link.title" :category="link.category"
+        :date="link.date" :time="link.time" 
+        :imagesLink="link.images" :hrefLink="link.href"
+        :descriptionLink="link.description" :imageLink="link.imageLink" 
+      />
+    </div>
+
+    <div class="flex justify-between items-center border-b pb-5">
+      <div class="flex justify-items-center justify-start items-center space-x-1">
+      <div>
+        <Icon name="circum:read" class="text-4xl sm:text-5xl" />
+      </div>
+      <div>
+        <h1 class="text-lg sm:text-xl md:text-2xl font-bold">History</h1>
+        <span class="text-xs sm:text-sm text-gray-500">
+          Here you can see your history of link visited.
+        </span>
+      </div>
+
+      </div>
+      <div class="flex justify-center items-center">
+        <Button variant="ghost" as-child>
+          <a href="">
+            Views all
+            <Icon name="fluent:arrow-right-24-regular" class="text-lg ml-1" />
+          </a>
+        </Button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4 4xl:grid-cols-6 gap-5 justify-items-center">
+      <CardLinks 
+        v-for="link in filteredLinks" :key="link.id" 
+        :titleLink="link.title" :category="link.category"
+        :date="link.date" :time="link.time" 
+        :imagesLink="link.images" :hrefLink="link.href"
+        :descriptionLink="link.description" :imageLink="link.imageLink" 
+      />
+    </div>
+
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import CardLinks from '~/components/dashboard/default/mylinks/CardLinks.vue';
-import { Check, ChevronsUpDown } from 'lucide-vue-next'
-import { cn } from '@/lib/utils'
 
-// Category for the filter
-const category = [
-  { value: 'Html', label: 'HTML' },
-  { value: 'sveltekit', label: 'SvelteKit' },
-  { value: 'nuxt.js', label: 'Nuxt.js' },
-  { value: 'remix', label: 'Remix' },
-  { value: 'astro', label: 'Astro' },
-]
-// Popover Default
-
-const open = ref(false);
-// const selectedCategory = ref<string[]>([]);
-
-// const toggleCategory = (category: string) => {
-//   const index = selectedCategory.value.indexOf(category);
-//   if (index === -1) {
-//     selectedCategory.value.push(category);
-//   } else {
-//     selectedCategory.value.splice(index, 1);
-//   }
-// };
-
-// const resetCategories = () => {
-//   selectedCategory.value = [];
-// };
-
-
-
-
-// Filter Criteria
-const filterCriteria = ref<string>('recentToOld');
 
 
 
@@ -199,7 +281,43 @@ const filteredLinks = computed(() => {
   },
   {
     id: 6,
-    title: 'Test d un titre',
+    title: 'Test d un tite',
+    images: '/images/banniere/banniere-exemple.jpg',
+    imageLink: '/images/profile/user2.png',
+    category: ['Html', 'Css', 'Javascript', 'Sveltekit', 'Nuxt.js', 'Remix', 'Astro', 'Sveltekit', 'Nuxt.js', 'Remix', 'Astro'],
+    date: '2022-10-11',
+    time: '10:10',
+    styleBadge: 'bg-purple-500',
+    href: '/article/how-to-use-openlinks',
+    description: 'Openlinks is a project designed to bring together new articles, shared links and much more.',
+  },
+  {
+    id: 7,
+    title: 'Test d un ',
+    images: '/images/banniere/banniere-exemple.jpg',
+    imageLink: '/images/profile/user2.png',
+    category: ['Html', 'Css', 'Javascript', 'Sveltekit', 'Nuxt.js', 'Remix', 'Astro', 'Sveltekit', 'Nuxt.js', 'Remix', 'Astro'],
+    date: '2022-10-11',
+    time: '10:10',
+    styleBadge: 'bg-purple-500',
+    href: '/article/how-to-use-openlinks',
+    description: 'Openlinks is a project designed to bring together new articles, shared links and much more.',
+  },
+  {
+    id: 8,
+    title: 'Test',
+    images: '/images/banniere/banniere-exemple.jpg',
+    imageLink: '/images/profile/user2.png',
+    category: ['Html', 'Css', 'Javascript', 'Sveltekit', 'Nuxt.js', 'Remix', 'Astro', 'Sveltekit', 'Nuxt.js', 'Remix', 'Astro'],
+    date: '2022-10-11',
+    time: '10:10',
+    styleBadge: 'bg-purple-500',
+    href: '/article/how-to-use-openlinks',
+    description: 'Openlinks is a project designed to bring together new articles, shared links and much more.',
+  },
+  {
+    id: 9,
+    title: 'Test d',
     images: '/images/banniere/banniere-exemple.jpg',
     imageLink: '/images/profile/user2.png',
     category: ['Html', 'Css', 'Javascript', 'Sveltekit', 'Nuxt.js', 'Remix', 'Astro', 'Sveltekit', 'Nuxt.js', 'Remix', 'Astro'],
@@ -210,29 +328,8 @@ const filteredLinks = computed(() => {
     description: 'Openlinks is a project designed to bring together new articles, shared links and much more.',
   },
 ];
-  let filtered = links; // Start with all the links
-  // Filter by date or title
-  switch (filterCriteria.value) {
-    case 'recentToOld':
-      filtered = filtered.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-      break;
-    case 'oldToRecent':
-      filtered = filtered.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-      break;
-    case 'titleAZ':
-      filtered = filtered.sort((a, b) => a.title.localeCompare(b.title));
-      break;
-    case 'titleZA':
-      filtered = filtered.sort((a, b) => b.title.localeCompare(a.title));
-      break;
-  }
-  return filtered;
+  return links.slice(0, 4);
 });
-
-// Set Filter Criteria
-const setFilterCriteria = (criteria: string) => {
-  filterCriteria.value = criteria;
-};
 
 
 // Page Meta
@@ -251,3 +348,5 @@ useHead({
 })
 
 </script>
+
+<style></style>

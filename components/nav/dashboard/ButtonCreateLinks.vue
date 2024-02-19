@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <Dialog>
-      <DialogTrigger>
-        <TooltipProvider :delay-duration="200">
+  <DropdownMenu>
+    <DropdownMenuTrigger>
+      <TooltipProvider :delay-duration="200">
           <Tooltip>
             <TooltipTrigger as-child>
-              <Button>
-                Create Link
+              <Button class="flex justify-center items-center">
+                <Icon name="ep:plus" class="text-lg md:mr-1" />
+                <span class="hidden md:flex">Create Link</span>
               </Button>
             </TooltipTrigger>
             <TooltipContent side="bottom">
@@ -14,6 +14,16 @@
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent class="flex flex-col">
+      <DialogLinkMe />
+      <DialogLinkTeam />
+    </DropdownMenuContent>
+  </DropdownMenu>
+  
+
+      <!-- <Dialog>
+      <DialogTrigger>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -132,32 +142,35 @@
           </Tabs>
 
       </DialogContent>
-    </Dialog>
-  </div>
+    </Dialog> -->
   <Toast/>
 </template>
 
 <script lang="ts" setup>
-import { h } from 'vue'
-import { useForm } from 'vee-validate'
-import { toTypedSchema } from '@vee-validate/zod'
-import * as z from 'zod'
+import DialogLinkMe from '@/components/nav/dashboard/dialog/DialogLinkMe.vue'
+import DialogLinkTeam from '@/components/nav/dashboard/dialog/DialogLinkTeam.vue'
 
-import { toast } from '@/components/ui/toast'
 
-const formSchema = toTypedSchema(z.object({
-  link: z.string().url(),
-  select: z.string(),
-}))
+// import { h } from 'vue'
+// import { useForm } from 'vee-validate'
+// import { toTypedSchema } from '@vee-validate/zod'
+// import * as z from 'zod'
 
-const { handleSubmit } = useForm({
-  validationSchema: formSchema,
-})
+// import { toast } from '@/components/ui/toast'
 
-const onSubmit = handleSubmit((values) => {
-  toast({
-    title: 'You submitted the following values:',
-    description: h('pre', { class: 'mt-2 w-[340px] rounded-md bg-slate-950 p-4' }, h('code', { class: 'text-white' }, JSON.stringify(values, null, 2))),
-  })
-})
+// const formSchema = toTypedSchema(z.object({
+//   link: z.string().url(),
+//   select: z.string(),
+// }))
+
+// const { handleSubmit } = useForm({
+//   validationSchema: formSchema,
+// })
+
+// const onSubmit = handleSubmit((values) => {
+//   toast({
+//     title: 'You submitted the following values:',
+//     description: h('pre', { class: 'mt-2 w-[340px] rounded-md bg-slate-950 p-4' }, h('code', { class: 'text-white' }, JSON.stringify(values, null, 2))),
+//   })
+// })
 </script>

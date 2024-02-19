@@ -56,7 +56,7 @@
           </div>
           </div>
           <div class="space-x-1 mt-1">
-            <Badge v-for="(nameCategory, index) in category.slice(0, 4)" :key="nameCategory" >
+            <Badge v-for="(nameCategory, index) in category.slice(0, 3)">
               {{ nameCategory }}
             </Badge>
             <DropdownMenu v-if="category.length > 4">
@@ -69,7 +69,7 @@
                 <DropdownMenuLabel>Other category ✨</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <ScrollArea class="w-40 h-40">
-                  <DropdownMenuItem v-for="nameCategory in category.slice(4)" :key="nameCategory">
+                  <DropdownMenuItem v-for="nameCategory in category.slice(3)">
                     {{ nameCategory }}
                   </DropdownMenuItem>
                 </ScrollArea>

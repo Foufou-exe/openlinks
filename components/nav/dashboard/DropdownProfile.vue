@@ -5,7 +5,7 @@
         <Tooltip>
             <TooltipTrigger as-child>
                 <div class="flex bg-muted rounded-lg">
-                    <div class="flex flex-col items-center mr-1 ml-2 p-2">
+                    <div class="hidden md:flex flex-col items-center mr-1 ml-2 p-2">
                         <span class="text-sm font-bold">John Doe</span>
                     </div>
                     <NuxtImg src="/images/profile/user4.png" class="w-10 rounded-lg" />
