@@ -3,13 +3,22 @@
     <nav class="flex justify-between items-center p-2 dark:bg-neutral-900/40 bg-muted/10 border-b">
       <div class="flex space-x-1 items-center p-1">
         <DropdownMenu  />
-        <Logo class="hidden md:flex" />
+        <div class="hidden lg:flex">
+          <Logo />
+        </div>
       </div>
-      <div class="flex space-x-1 items-center p-1">
+      <div class="flex space-x-2 md:space-x-2 lg:space-x-4 items-center p-1">
         <ButtonCreateLinks />
         <ButtonSearchDashboard />
-        <ButtonThemeNavVue />
-        <DropdownProfile />
+        <ButtonNotif />
+        <div class="hidden md:flex">
+          <ButtonThemeNavVue />
+        </div>
+        <DropdownProfile 
+          :key="user.id"
+          :nameUser="user.name"
+          :imageUser="user.image"
+        />
       </div>
     </nav>
 
@@ -17,31 +26,24 @@
       <aside
         class="w-64 bg-muted/10 dark:bg-neutral-900/40 border-r overflow-y-auto hidden lg:flex flex-col justify-between"
         aria-label="Sidebar">
-        <div class="py-5 px-3 space-y-5 flex-grow">
-          <Button variant="ghost" class="w-full justify-start items-center" as-child>
+        <div class="py-5 px-3 space-y-4 flex-grow">
+          <Button variant="ghost" class="w-full justify-start items-center text-lg font-semibold px-2" as-child>
               <a href="/dashboard">
-                <Icon name="fluent:home-20-regular" class="text-xl" />
                 <span class="ml-2">Home</span>
               </a>
-            </Button>
-          <ul>
+          </Button>
+          <ul class="menu">
             <li class="flex items-center py-1 space-x-2 px-4 text-lg font-semibold tracking-tight">
               <span class="">Private</span>
             </li>
             <Button variant="ghost" class="w-full justify-start items-center" as-child>
               <a href="/dashboard/private/mylinks">
-                <Icon name="circum:link" class="text-xl" />
+                <Icon name="mingcute:link-3-line" class="text-xl" />
                 <span class="ml-2">My Links</span>
               </a>
             </Button>
-            <Button variant="ghost" class="w-full justify-start items-center">
-              <Icon name="carbon:collapse-categories" class="text-xl" />
-              <span class="ml-2">My Categories</span>
-            </Button>
-            <Button variant="ghost" class="w-full justify-start items-center">
-              <Icon name="carbon:collapse-categories" class="text-xl" />
-              <span class="ml-2">My Directories</span>
-            </Button>
+            <ButtonMyCategories />
+            <ButtonMyDirectories />
           </ul>
           <ul>
             <li class="flex items-center space-x-2 px-4 py-1 text-lg font-semibold tracking-tight">
@@ -62,32 +64,23 @@
             <li class="flex items-center space-x-2 px-4 py-1 text-lg font-semibold tracking-tight">
               <span class="">Manage</span>
             </li>
-            <Button variant="ghost" class="w-full justify-between">
+            <Button variant="ghost" class="w-full justify-start">
               <a href="" class="flex items-center">
-                <Icon name="circum:star" class="text-xl" />
+                <Icon name="quill:star" class="text-xl" />
                 <span class="ml-2">Favours</span>
               </a>
-              <span class="font-thin">
-                {{ countFavours }}
-              </span>
             </Button>
-            <Button variant="ghost" class="w-full justify-between">
+            <Button variant="ghost" class="w-full justify-start">
               <a href="" class="flex items-center">
-                <Icon name="circum:timer" class="text-xl" />
+                <Icon name="ph:clock-bold" class="text-xl" />
                 <span class="ml-2">Recent</span>
               </a>
-              <span class="font-thin">
-                {{ countRecent }}
-              </span>
             </Button>
-            <Button variant="ghost" class="w-full justify-between">
+            <Button variant="ghost" class="w-full justify-start">
               <a href="" class="flex items-center">
-                <Icon name="circum:read" class="text-xl" />
+                <Icon name="solar:notification-unread-lines-broken" class="text-xl" />
                 <span class="ml-2">History</span>
               </a>
-              <span class="font-thin">
-                {{ countHistory }}
-              </span>
             </Button>
           </ul>
         </div>
@@ -103,7 +96,7 @@
             <span class="ml-2">Feedback</span>
           </Button>
           <Button variant="ghost" class="w-full justify-start items-center">
-            <Icon name="circum:stethoscope" class="text-xl" />
+            <Icon name="fluent:person-support-24-filled" class="text-xl" />
             <span class="ml-2">Support</span>
           </Button>
         </ul>
@@ -127,6 +120,9 @@ import ButtonSearchDashboard from '@/components/nav/dashboard/ButtonSearchDashbo
 import ButtonCreateLinks from '@/components/nav/dashboard/ButtonCreateLinks.vue'
 import ButtonCreateTeams from '@/components/dashboard/default/aside/ButtonCreateTeams.vue'
 import ButtonTeams from '@/components/dashboard/default/aside/ButtonTeams.vue'
+import ButtonMyCategories from '@/components/dashboard/default/aside/ButtonMyCategories.vue';
+import ButtonMyDirectories from '@/components/dashboard/default/aside/ButtonMyDirectories.vue';
+import ButtonNotif from '@/components/nav/dashboard/ButtonNotif.vue'
 
 const teams = [
   {
@@ -146,19 +142,11 @@ const teams = [
   }
 ]
 
-defineProps({
-  countFavours: {
-    type: Number,
-    default: 0
-  },
-  countRecent: {
-    type: Number,
-    default: 0
-  },
-  countHistory: {
-    type: Number,
-    default: 0
-  },
-})
+const user = {
+  id: 1,
+  name: 'Foufou-exe',
+  image: '/images/profile/user4.png'
+}
+
 
 </script>

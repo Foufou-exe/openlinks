@@ -21,34 +21,36 @@
                 </a>
               </NavigationMenuLink>
             </li>
-            <ListItem href="/#about" title="About" icons="circum:home">
+            <ListItem href="/#about" title="About" icons="mingcute:home-3-fill">
                 Learn more about the project and its goals.
             </ListItem>
-            <ListItem href="/#why" title="Why use Openlinks ?" icons="circum:search">
+            <ListItem href="/#why" title="Why use Openlinks ?" icons="iconamoon:search-duotone">
                 Openlinks is a project designed to bring together new articles, shared links and much more.
             </ListItem>
-            <ListItem href="/#HowDoIUseIt" title="How do i use it ?" icons="circum:read">
+            <ListItem href="/#HowDoIUseIt" title="How do i use it ?" icons="ph:mouse-simple-duotone">
               Openlinks is easy to use and you can use it in many ways. 
             </ListItem>
           </ul>
         </NavigationMenuContent>
       </NavigationMenuItem>
+
       <NavigationMenuItem>
-        <NavigationMenuTrigger>Features</NavigationMenuTrigger>
-        <NavigationMenuContent>
-          <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-            <ListItem
-              v-for="component in components"
-              :key="component.title"
-              :title="component.title"
-              :href="component.href"
-              :icons="component.icons"
-            >
-              {{ component.description }}
-            </ListItem>
-          </ul>
-        </NavigationMenuContent>
+        <NuxtLink to="/">
+          <NavigationMenuLink :class="navigationMenuTriggerStyle()">
+            Pricing
+          </NavigationMenuLink>
+        </NuxtLink>
       </NavigationMenuItem>
+
+
+      <NavigationMenuItem>
+        <NuxtLink to="/">
+          <NavigationMenuLink :class="navigationMenuTriggerStyle()">
+            Features
+          </NavigationMenuLink>
+        </NuxtLink>
+      </NavigationMenuItem>
+
       <NavigationMenuItem>
         <NavigationMenuTrigger>Need help ?</NavigationMenuTrigger>
         <NavigationMenuContent>
@@ -66,36 +68,28 @@
         </NavigationMenuContent>
       </NavigationMenuItem>
     </NavigationMenuList>
+
   </NavigationMenu>
 </template>
 
 <script setup lang="ts">
 import ListItem from './NavigationMenuItem.vue'
-
-const components: { title: string; href: string; description: string; icons: string; }[] = [
-  {
-    title: 'Security',
-    icons: 'circum:server',
-    href: '/#security',
-    description: 'Openlinks prioritises the security of its users data',
-  },
-
-]
+import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 
 const componentsHelp: { title: string; href: string; description: string; icons: string; }[] = [
   {
     title: 'FAQ',
-    icons: 'circum:square-question',
+    icons: 'streamline:interface-help-question-circle-circle-faq-frame-help-info-mark-more-query-question',
     href: '/faq',
     description:
       'Frequently asked questions about Openlinks.',
   },
   {
     title: 'Support', 
-    icons: 'circum:stethoscope',
+    icons: 'fluent:person-support-24-filled',
     href: '/support',
     description:
       'Get help with Openlinks. Contact us for help with your account, plan, or billing.',
-  },
+  }
 ]
 </script>

@@ -4,9 +4,9 @@
       <TooltipProvider :delay-duration="200">
           <Tooltip>
             <TooltipTrigger as-child>
-              <Button class="flex justify-center items-center">
-                <Icon name="ep:plus" class="text-lg md:mr-1" />
-                <span class="hidden md:flex">Create Link</span>
+              <Button class="flex justify-center items-center p-3">
+                <Icon name="ep:plus" class="text-lg lg:mr-1" />
+                <span class="hidden lg:flex">Create Link</span>
               </Button>
             </TooltipTrigger>
             <TooltipContent side="bottom">

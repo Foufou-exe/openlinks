@@ -1,7 +1,7 @@
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
-      <Button variant="ghost" class="sm:flex md:flex lg:hidden">
+      <Button variant="ghost" class="sm:flex md:flex lg:hidden p-2">
         <Icon name="circum:menu-kebab" class="text-xl" />
       </Button>
     </DropdownMenuTrigger>

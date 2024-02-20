@@ -7,7 +7,7 @@
     <div class="hidden lg:flex space-x-1  justify-center items-center p-1">
       <MenuNav />
     </div>
-    <div class="flex space-x-1 justify-center items-center p-1">
+    <div class="flex space-x-1 md:space-x-2 lg:space-x-3 justify-center items-center p-1">
       <ButtonSearch />
       <ButtonThemeNav />
       <ButtonGithub />

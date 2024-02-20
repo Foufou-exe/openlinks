@@ -2,8 +2,8 @@
     <TooltipProvider :delay-duration="200">
         <Tooltip>
             <TooltipTrigger as-child>
-                <Button type="button" variant="ghost" @click="handleOpenChange">
-                    <Icon name="circum:search" class="text-2xl" />
+                <Button type="button" variant="ghost" @click="handleOpenChange" class="p-2">
+                    <Icon name="iconamoon:search-duotone" class="text-2xl" />
                 </Button>
             </TooltipTrigger>
             <TooltipContent side="bottom">

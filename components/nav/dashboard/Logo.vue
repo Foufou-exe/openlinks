@@ -1,13 +1,24 @@
 <template>
-  <a class="flex items-center text-lg font-medium space-x-2" href="/dashboard">
-    <NuxtImg src="/icon.png" class="w-[40px]" />
-    <h1>Openlinks</h1>
-    <transition name="message">
-      <div v-if="showMessage" class="message">
-        <span class="font-thin">{{ welcomeStore.lastWelcomeMessage.message }}</span>
-      </div>
-    </transition>
-  </a>
+  <TooltipProvider :delay-duration="200">
+    <Tooltip>
+      <TooltipTrigger as-child>
+        <a class="flex items-center text-lg font-medium space-x-2 " href="/dashboard">
+          <NuxtImg src="/icon.png" class="w-[40px]" />
+          <h1>Openlinks</h1>
+          <transition name="message">
+            <div v-if="showMessage" class="message">
+              <span class="font-thin">{{ welcomeStore.lastWelcomeMessage.message }}</span>
+            </div>
+          </transition>
+        </a>
+      </TooltipTrigger>
+      <TooltipContent side="right">
+        <div class="flex items-center gap-2">
+          <span class="text-sm font-semibold">Home</span>
+        </div>
+      </TooltipContent>
+    </Tooltip>
+  </TooltipProvider>
 </template>
 
 <script lang="ts" setup>
@@ -16,19 +27,20 @@ import { useWelcomeStore } from '@/stores/welcomeStore.js';
 const welcomeStore = useWelcomeStore();
 const showMessage = ref(false);
 
+
 onMounted(() => {
   welcomeStore.updateWelcomeMessage();
   const now = new Date();
   const today = now.toDateString();
   const messageInfo = welcomeStore.lastWelcomeMessage;
-  
+
   // Utiliser localStorage pour vérifier si le message a déjà été affiché
   const shownMessage = localStorage.getItem('shownMessage');
-  
+
   if (!shownMessage || shownMessage !== messageInfo.message + today) {
     showMessage.value = true;
     localStorage.setItem('shownMessage', messageInfo.message + today);
-    
+
     setTimeout(() => {
       showMessage.value = false;
     }, 9500); // Cache le message après 5 secondes

@@ -1,15 +1,15 @@
 <template>
   <div class="space-y-10">
-    <div class="flex justify-between items-center border-b pb-5">
+    <div class="pb-3 border-b mb-5 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-3 sm:space-y-0">
       <div class="flex justify-items-center justify-start items-center space-x-1">
         <div>
           <Icon name="circum:home" class="text-4xl sm:text-5xl" />
         </div>
         <div>
           <h1 class="text-lg sm:text-xl md:text-2xl font-bold">Dashboard</h1>
-          <span class="text-xs sm:text-sm text-gray-500">
+          <p class="text-xs sm:text-sm text-gray-500">
             Welcome to your dashboard. Here you can manage your links and see your statistics.
-          </span>
+          </p>
         </div>
       </div>
 
@@ -112,7 +112,7 @@
     <div class="flex justify-between items-center border-b pb-5">
       <div class="flex justify-items-center justify-start items-center space-x-1">
         <div>
-          <Icon name="circum:timer" class="text-4xl sm:text-5xl" />
+          <Icon name="ph:clock-bold" class="text-4xl sm:text-5xl" />
         </div>
         <div>
           <h1 class="text-lg sm:text-xl md:text-2xl font-bold">Recent</h1>
@@ -142,16 +142,16 @@
     </div>
 
 
-    <div class="flex justify-between items-center border-b pb-5">
+    <div class="pb-3 border-b mb-5 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-3 sm:space-y-0">
       <div class="flex justify-items-center justify-start items-center space-x-1">
       <div>
-        <Icon name="circum:star" class="text-4xl sm:text-5xl" />
+        <Icon name="quill:star" class="text-4xl sm:text-5xl" />
       </div>
       <div>
         <h1 class="text-lg sm:text-xl md:text-2xl font-bold">Favours</h1>
-        <span class="text-xs sm:text-sm text-gray-500">
+        <p class="text-xs sm:text-sm text-gray-500">
           Here are your favourited links.
-        </span>
+        </p>
       </div>
       </div>
       <div class="flex justify-center items-center">
@@ -174,16 +174,16 @@
       />
     </div>
 
-    <div class="flex justify-between items-center border-b pb-5">
+    <div class="pb-3 border-b mb-5 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-3 sm:space-y-0">
       <div class="flex justify-items-center justify-start items-center space-x-1">
       <div>
-        <Icon name="circum:read" class="text-4xl sm:text-5xl" />
+        <Icon name="solar:notification-unread-lines-broken" class="text-4xl sm:text-5xl" />
       </div>
       <div>
         <h1 class="text-lg sm:text-xl md:text-2xl font-bold">History</h1>
-        <span class="text-xs sm:text-sm text-gray-500">
+        <p class="text-xs sm:text-sm text-gray-500">
           Here you can see your history of link visited.
-        </span>
+        </p>
       </div>
 
       </div>

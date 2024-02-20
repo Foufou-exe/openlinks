@@ -2,7 +2,7 @@
   <Dialog>
     <DialogTrigger as-child>
       <Button variant="ghost" class="w-full justify-start items-center">
-        <Icon name="ep:plus" class="text-xl" />
+        <Icon name="material-symbols:add-rounded" class="text-xl" />
         <span class="ml-2">New Team</span>
       </Button>
     </DialogTrigger>

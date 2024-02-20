@@ -1,8 +1,8 @@
 <template>
     <div class="mx-auto w-full max-w-3xl px-4 pt-16 pb-10 md:px-6 lg:px-8 min-h-screen">
-        <div class="flex flex-col space-y-5">
+        <div class="flex flex-col space-y-2">
             <h1 class="text-4xl font-bold">FAQ</h1>
-            <span class="text-lg font-thin">
+            <span class="text-lg font-thin text-gray-500">
                 Frequently asked questions.
             </span>
         </div>
@@ -19,7 +19,7 @@
         <div class="flex justify-end mt-10">
             <Button type="button" variant="secondary" as-child>
                 <a href="/" class="flex items-center justify-center">
-                    <Icon name="circum:home" class="mr-2 text-lg" />
+                    <Icon name="mingcute:home-3-fill" class="mr-2 text-lg" />
                     Home
                 </a>
             </Button>

@@ -2,8 +2,8 @@
   <TooltipProvider :delay-duration="200">
     <Tooltip>
       <TooltipTrigger as-child>
-        <Button @click="toggleTheme" variant="ghost" :class="colorMode.preference === 'dark' ? 'theme-light' : 'theme-dark' ">
-          <Icon :name="currentThemeIcon" class="text-2xl" />
+        <Button @click="toggleTheme" variant="ghost" :class="colorMode.preference === 'dark' ? 'theme-light' : 'theme-dark' " class="p-2">
+          <Icon :name="currentThemeIcon" class="text-2xl font-thin" />
         </Button>
       </TooltipTrigger>
       <TooltipContent side="bottom">
@@ -37,9 +37,9 @@ const colorMode = useColorMode();
 
 const currentThemeIcon = computed(() => {
   if (colorMode.preference === 'system') {
-    return 'circum:laptop';
+    return 'line-md:computer';
   } else {
-    return colorMode.preference === 'dark' ? 'ph:sun-light' : 'circum:dark';
+    return colorMode.preference === 'dark' ? 'line-md:sunny-outline-loop' : 'line-md:sunny-outline-to-moon-loop-transition';
   }
 });
 

@@ -10,8 +10,11 @@
         <section id="HowDoIUseIt" class="min-h-screen mx-auto flex max-w-6xl items-center p-5 mb-10 md:px-6">
             <SectionHowDoIUseIt />
         </section>
-        <section id="security" class="min-h-screen mx-auto flex max-w-6xl items-center p-5 mb-10 md:px-6">
-            <SectionSecurity />
+        <section id="pricing" class="min-h-screen mx-auto flex max-w-6xl items-center p-5 mb-10 md:px-6">
+            <SectionPricing />
+        </section>
+        <section id="feature" class="min-h-screen mx-auto flex max-w-6xl items-center p-5 mb-10 md:px-6">
+            <SectionFeature />
         </section>
         <div class="dark:bg-neutral-900/50 bg-muted/10">
             <section id="catchPhrase" class="min-h-screen mx-auto flex max-w-6xl justify-center items-center p-5 md:px-6">
@@ -33,9 +36,10 @@
 import SectionAbout  from "@/components/default/SectionAbout.vue";
 import SectionHowDoIUseIt from "@/components/default/SectionHowDoIUseIt.vue";
 import SectionWhy from "@/components/default/SectionWhy.vue";
-import SectionSecurity from "@/components/default/SectionSecurity.vue";
+import SectionFeature from "@/components/default/SectionFeature.vue";
 import SectionStart from "@/components/default/SectionStart.vue";
 import SectionCatchPhrase from "@/components/default/SectionCatchPhrase.vue";
+import SectionPricing from "@/components/default/SectionPricing.vue";
 
 useSeoMeta({
     title: 'Openlinks',
@@ -47,7 +51,7 @@ useSeoMeta({
     ogUrl: '[og:https://Openlinks.com/]',
     twitterTitle: '[twitter:Openlinks]',
     twitterDescription: '[twitter:Openlinks - A place for developers to share ideas and learn new things]',
-    // twitterImage: '[twitter:/icon.png]'
+    twitterImage: '[twitter:/icon.png]'
     })
 
 useHead({
