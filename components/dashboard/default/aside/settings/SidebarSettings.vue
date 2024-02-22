@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex space-x-2 lg:flex-col lg:space-x-0 lg:space-y-1">
+  <nav class="flex space-x-2 lg:flex-col lg:space-x-0 lg:space-y-1 overflow-x-auto">
     <Button
       v-for="item in sidebarNavItems"
       :key="item.title"
@@ -33,41 +33,34 @@ interface Item {
   icon: string;
 }
 
+const $route = useRoute();
+
 const sidebarNavItems: Item[] = [
   {
     title: 'Account',
-    href: '/examples/forms/account',
+    href: '/dashboard/settings',
     icon: 'solar:settings-broken',
   },
   {
     title: 'Security',
-    href: '/examples/forms/security',
+    href: '/dashboard/settings/security',
     icon: 'solar:lock-broken',
   },
   {
     title: 'Notifications',
-    href: '/examples/forms/notifications',
+    href: '/dashboard/settings/notifications',
     icon: 'solar:notification-unread-lines-broken',
   },
   {
     title: 'Billing',
-    href: '/examples/forms/billing',
+    href: '/dashboard/settings/billing',
     icon: 'material-symbols:credit-card',
   },
   {
-    title: 'Teams',
-    href: '/examples/forms/teams',
-    icon: 'fluent:people-team-24-regular',
-  },
-  {
     title: 'Logout',
-    href: '/examples/forms/logout',
+    href: '/logout',
     icon: 'solar:logout-2-broken',
   },
 ]
 </script>
 
-
-<style>
-
-</style>

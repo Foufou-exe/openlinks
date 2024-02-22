@@ -4,9 +4,9 @@
             <CardTitle class="lg:text-3xl md:text-2xl sm:text-2xl flex justify-center mb-2">
                 Login to Openlinks ✨
             </CardTitle>
-            <CardDescription>
+            <!-- <CardDescription>
                 Connect to your openlinks account either via your Github or Google account or via your email and password.
-            </CardDescription>
+            </CardDescription> -->
         </CardHeader>
         <CardContent class="space-y-3">
             <div class="space-y-2">
@@ -34,13 +34,17 @@
                 </span>
             </div>
             <div class="flex flex-col justify-center space-y-2 p-2">
-                <Button variant="outline" @click="signIn(`github`)">
-                    <Icon name="pajamas:github" class="mr-2 text-xl" />
-                    Github
+                <Button variant="outline" as-child>
+                    <a>
+                        <Icon name="pajamas:github" class="text-xl mr-2" />
+                        <span>Github</span>
+                    </a>
                 </Button>
-                <Button variant="outline" type="button">
-                    <Icon name="pajamas:google" class="mr-2 text-xl" />
-                    Google
+                <Button variant="outline" type="button" as-child>
+                    <a>
+                        <Icon name="logos:google-icon" class="text-xl mr-2" />
+                        <span>Google</span>
+                    </a>
                 </Button>
             </div>
         </div>
