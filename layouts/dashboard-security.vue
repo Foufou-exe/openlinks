@@ -49,6 +49,8 @@
 <script lang="ts" setup>
 import SidebarSettings from '@/components/dashboard/default/aside/settings/SidebarSettings.vue';
 import dashboardLayout from '@/layouts/dashboard-layout.vue';
+
+
 // Head
 useHead({
   title: 'Openlinks - Dashboard',

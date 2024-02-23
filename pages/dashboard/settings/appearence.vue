@@ -1,12 +1,12 @@
 <template>
-  <FormBilling />
+  <FormAppearence />
 </template>
 
 <script lang="ts" setup>
-import FormBilling from '@/components/nav/dashboard/settings/billing/FormBilling.vue';
+import FormAppearence from '@/components/nav/dashboard/settings/appearence/FormAppearence.vue';
+
 // Page Meta
 definePageMeta({
   layout: 'dashboard-security',
 })
 </script>
-

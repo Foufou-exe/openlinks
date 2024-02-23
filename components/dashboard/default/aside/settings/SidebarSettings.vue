@@ -42,6 +42,11 @@ const sidebarNavItems: Item[] = [
     icon: 'solar:settings-broken',
   },
   {
+    title: 'Appearence',
+    href: '/dashboard/settings/appearence',
+    icon: 'solar:gallery-edit-broken',
+  },
+  {
     title: 'Security',
     href: '/dashboard/settings/security',
     icon: 'solar:lock-broken',

@@ -9,9 +9,12 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
+  // Configuration Style Perso
   css: [
-    '~/assets/css/global.css'
+    '~/assets/css/global.css',
+    '~/assets/css/themes.css',
   ],
+  // Configuration Module Nuxt
   modules: [
     '@nuxtjs/tailwindcss', 
     'shadcn-nuxt',
@@ -27,7 +30,7 @@ export default defineNuxtConfig({
     storesDirs: ['./stores/**'],
   },
 
-  // Configuration Framework UI  : shadcn
+  // Configuration Framework UI : shadcn
   shadcn: {
     /**
      * Prefix for all the imported component
@@ -66,27 +69,8 @@ export default defineNuxtConfig({
   },
 
   alias: {
+    // Add an alias for the cookie module
     pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs",
     cookie: resolve(__dirname, "node_modules/cookie"),
   }, 
-
-  // authJs: {
-  //   guestRedirectTo: "/auth"
-  // },
-
-  // runtimeConfig: {
-  //   authJs: {
-  //     secret: process.env.NUXT_NEXTAUTH_SECRET // You can generate one with `openssl rand -base64 32`
-  //   },
-  //   github: {
-  //     clientId: process.env.NUXT_GITHUB_CLIENT_ID,
-  //     clientSecret: process.env.NUXT_GITHUB_CLIENT_SECRET
-  //   },
-  //   public: {
-  //     authJs: {
-  //       baseUrl: process.env.NUXT_NEXTAUTH_URL, // The URL of your deployed app (used for origin Check in production)
-  //       verifyClientOnEveryRequest: true // whether to hit the /auth/session endpoint on every client request
-  //     }
-  //   },
-  // },
 })

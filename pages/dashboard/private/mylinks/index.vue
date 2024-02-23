@@ -1,5 +1,6 @@
 <template>
-  <div class="pb-3 border-b mb-5 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-3 sm:space-y-0">
+  <div
+    class="pb-3 border-b mb-5 flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-3 sm:space-y-0">
     <div class="flex justify-items-center justify-start items-center space-x-1">
       <div>
         <Icon name="circum:link" class="text-4xl sm:text-5xl" />
@@ -16,7 +17,7 @@
           <DropdownMenuTrigger as="button">
             <TooltipProvider :delay-duration="200">
               <Tooltip>
-                <TooltipTrigger as-child>
+                <TooltipTrigger as-child >
                   <Button variant="secondary">
                     <Icon name="circum:filter" class="text-xl" />
                   </Button>
@@ -27,7 +28,7 @@
               </Tooltip>
             </TooltipProvider>
           </DropdownMenuTrigger>
-          <DropdownMenuContent class="w-50 mr-1 p-1" align="end">
+          <DropdownMenuContent class="w-52 mr-1 p-1" align="end">
             <DropdownMenuGroup>
               <DropdownMenuItem class="hover:font-semibold" @click="setFilterCriteria('recentToOld')">
                 <Icon name="circum:calendar-date" class="text-xl flex justify-center items-center mr-2 hover" />
@@ -51,64 +52,68 @@
 
         <Tabs default-value="grid">
           <TabsList>
-            <TabsTrigger value="grid">
-              <Icon name="circum:grid-4-1" class="text-2xl" />
-            </TabsTrigger>
-            <TabsTrigger value="line">
-              <Icon name="circum:grid-2-h" class="text-2xl" />
-            </TabsTrigger>
+            <TooltipProvider :delay-duration="200">
+              <Tooltip>
+                <TooltipTrigger as-child >
+                  <TabsTrigger value="grid" @click="setViewMode('grid')">
+                    <Icon name="circum:grid-4-1" class="text-2xl" />
+                  </TabsTrigger>
+                </TooltipTrigger>
+                <TooltipContent align="center" side="bottom">
+                  <span class="text-sm font-semibold">Mode Card</span>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
+            <TooltipProvider :delay-duration="200">
+              <Tooltip>
+                <TooltipTrigger as-child>
+                  <TabsTrigger value="line" @click="setViewMode('line')">
+                    <Icon name="circum:grid-2-h" class="text-2xl" />
+                  </TabsTrigger>
+                </TooltipTrigger>
+                <TooltipContent align="center" side="bottom">
+                  <span class="text-sm font-semibold">Mode Line</span>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </TabsList>
         </Tabs>
       </div>
     </div>
   </div>
 
-  <div
-    class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4 4xl:grid-cols-6 gap-5 justify-items-center">
-    <CardLinks v-for="link in filteredLinks" :key="link.id" :titleLink="link.title" :category="link.category"
-      :date="link.date" :time="link.time" :imagesLink="link.images" :hrefLink="link.href"
-      :descriptionLink="link.description" :imageLink="link.imageLink" />
-  </div>
+    <div v-show="currentViewMode === 'grid'"
+        class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4 4xl:grid-cols-6 gap-5 justify-items-center">
+        <CardLinks v-for="link in filteredLinks" :key="link.id" :titleLink="link.title" :category="link.category"
+          :date="link.date" :time="link.time" :imagesLink="link.images" :hrefLink="link.href"
+          :descriptionLink="link.description" :imageLink="link.imageLink" />
+      </div>
+
+
+    <div class="grid grid-cols-1 gap-3" v-show="currentViewMode === 'line'">
+        <CardLinksSimple 
+          v-for="link in filteredLinks" :key="link.id" :titleLink="link.title" :category="link.category"
+          :date="link.date" :time="link.time" :imagesLink="link.images" :hrefLink="link.href"
+          :descriptionLink="link.description" :imageLink="link.imageLink" 
+        />
+      </div>
+
 </template>
 
 <script setup lang="ts">
 import CardLinks from '~/components/dashboard/default/mylinks/CardLinks.vue';
-import { Check, ChevronsUpDown } from 'lucide-vue-next'
-import { cn } from '@/lib/utils'
-
-// Category for the filter
-const category = [
-  { value: 'Html', label: 'HTML' },
-  { value: 'sveltekit', label: 'SvelteKit' },
-  { value: 'nuxt.js', label: 'Nuxt.js' },
-  { value: 'remix', label: 'Remix' },
-  { value: 'astro', label: 'Astro' },
-]
-// Popover Default
-
-const open = ref(false);
-// const selectedCategory = ref<string[]>([]);
-
-// const toggleCategory = (category: string) => {
-//   const index = selectedCategory.value.indexOf(category);
-//   if (index === -1) {
-//     selectedCategory.value.push(category);
-//   } else {
-//     selectedCategory.value.splice(index, 1);
-//   }
-// };
-
-// const resetCategories = () => {
-//   selectedCategory.value = [];
-// };
-
-
-
-
+import CardLinksSimple from '@/components/dashboard/default/mylinks/CardLinksSimple.vue';
 // Filter Criteria
 const filterCriteria = ref<string>('recentToOld');
 
+// Current View Mode
+const currentViewMode = ref('grid');
 
+// Set View Mode
+function setViewMode(mode) {
+  currentViewMode.value = mode;
+}
 
 // Filtered Links
 const filteredLinks = computed(() => {
