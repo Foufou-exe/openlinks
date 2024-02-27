@@ -1,11 +1,11 @@
 <template>
   <a :href="hrefLink" rel="noopener" target="_blank" class="rounded-3xl group w-full" @mouseenter="showButtons = true"
     @mouseleave="showButtons = false">
-    <div class="border rounded-xl px-2 py-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 justify-center items-center ">
+    <div class="border rounded-xl px-2 py-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 justify-center items-center space-y-3 md:space-y-0">
       <div class="flex justify-start items-center space-x-2 w-[400px]">
         <NuxtImg :src="imageLink" class="w-10 h-10 rounded-xl" />
         <div class="space-y-1">
-          <span class="break-words line-clamp-1 leading-none text-lg font-semibold">
+          <span class="break-words line-clamp-1 leading-none text-lg font-semibold text-overflow">
             {{ titleLink }}
           </span>
           <p class="text-xs text-gray-600">Added on {{ date }} at {{ time }}</p>
