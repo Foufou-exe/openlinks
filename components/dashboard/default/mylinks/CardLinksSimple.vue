@@ -121,33 +121,3 @@ defineProps({
   }
 })
 </script>
-
-<style>
-/* Ajoutez ces styles pour gérer l'espacement et la visibilité */
-.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s 0.2s, opacity 0.2s ease;
-}
-
-.is-visible {
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0s 0s, opacity 0.2s ease;
-}
-
-/* Définissez vos transitions CSS */
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.fade-enter-to,
-.fade-leave-from {
-  opacity: 1;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.2s ease;
-}</style>

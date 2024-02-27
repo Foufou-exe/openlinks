@@ -64,20 +64,20 @@
             <li class="flex items-center space-x-2 px-4 py-1 text-lg font-semibold tracking-tight">
               <span class="">Manage</span>
             </li>
-            <Button variant="ghost" class="w-full justify-start">
-              <a href="" class="flex items-center">
+            <Button variant="ghost" class="w-full justify-start" as-child>
+              <a href="/dashboard/manage/favours" class="flex items-center">
                 <Icon name="quill:star" class="text-xl" />
                 <span class="ml-2">Favours</span>
               </a>
             </Button>
-            <Button variant="ghost" class="w-full justify-start">
-              <a href="" class="flex items-center">
+            <Button variant="ghost" class="w-full justify-start" as-child>
+              <a href="/dashboard/manage/recent" class="flex items-center">
                 <Icon name="ph:clock-bold" class="text-xl" />
                 <span class="ml-2">Recent</span>
               </a>
             </Button>
-            <Button variant="ghost" class="w-full justify-start">
-              <a href="" class="flex items-center">
+            <Button variant="ghost" class="w-full justify-start" as-child>
+              <a href="/dashboard/manage/history" class="flex items-center">
                 <Icon name="solar:notification-unread-lines-broken" class="text-xl" />
                 <span class="ml-2">History</span>
               </a>

@@ -82,7 +82,7 @@
           <NuxtImg :src="imagesLink" class="rounded-xl mt-5 w-full object-cover my-2 rounded-12 h-40" />
         </div>
         <div>
-          <p class="text-sm line-clamp-3 italic dark:text-gray-400">
+          <p class="text-sm line-clamp-3 italic dark:text-gray-400 h-20">
             {{ descriptionLink }}
           </p>
         </div>
@@ -129,28 +129,3 @@ defineProps({
   }
 })
 </script>
-
-<style>
-/* Ajoutez ces styles pour gérer l'espacement et la visibilité */
-.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s 0.2s, opacity 0.2s ease;
-}
-
-.is-visible {
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0s 0s, opacity 0.2s ease;
-}
-/* Définissez vos transitions CSS */
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
-}
-.fade-enter-to, .fade-leave-from {
-  opacity: 1;
-}
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.2s ease;
-}
-</style>
