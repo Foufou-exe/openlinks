@@ -87,17 +87,23 @@
         <Separator  class="mb-5"/>
 
         <ul class="pb-5 px-3">
-          <Button variant="ghost" class="w-full justify-start items-center">
-            <Icon name="iconoir:terminal-tag" class="text-xl" />
-            <span class="ml-2">Changelog</span>
+          <Button variant="ghost" class="w-full justify-start items-center" as-child>
+            <a href="https://github.com/Foufou-exe/openlinks/releases">
+              <Icon name="iconoir:terminal-tag" class="text-xl" />
+              <span class="ml-2">Changelog</span>
+            </a>
           </Button>
-          <Button variant="ghost" class="w-full justify-start items-center">
-            <Icon name="fluent:person-feedback-28-regular" class="text-xl" />
-            <span class="ml-2">Feedback</span>
+          <Button variant="ghost" class="w-full justify-start items-center" as-child>
+            <a href="https://github.com/Foufou-exe/openlinks/discussions">
+              <Icon name="fluent:person-feedback-28-regular" class="text-xl" />
+              <span class="ml-2">Feedback</span>
+            </a>
           </Button>
-          <Button variant="ghost" class="w-full justify-start items-center">
-            <Icon name="fluent:person-support-24-filled" class="text-xl" />
-            <span class="ml-2">Support</span>
+          <Button variant="ghost" class="w-full justify-start items-center" as-child>
+            <a href="/support">
+              <Icon name="fluent:person-support-24-filled" class="text-xl" />
+              <span class="ml-2">Support</span>
+            </a>
           </Button>
         </ul>
       </aside>
