@@ -52,7 +52,7 @@ useSeoMeta({
     twitterTitle: '[twitter:Openlinks]',
     twitterDescription: '[twitter:Openlinks - A place for developers to share ideas and learn new things]',
     twitterImage: '[twitter:/icon.png]'
-    })
+})
 
 useHead({
     htmlAttrs: {

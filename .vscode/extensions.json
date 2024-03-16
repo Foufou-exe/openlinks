@@ -2,8 +2,14 @@
     "recommendations": [
         "antfu.iconify",
         "nuxtr.nuxt-vscode-extentions",
-        "vue.vscode-typescript-vue-plugin",
         "vue.volar",
-        "shenjiaolong.vue-helper"
+        "shenjiaolong.vue-helper",
+        "mikestead.dotenv",
+        "wallabyjs.console-ninja",
+        "rapidapi.vscode-rapidapi-client",
+        "bradlc.vscode-tailwindcss",
+        "oderwat.indent-rainbow",
+        "selemondev.shadcn-vue",
+        "ecmel.vscode-html-css"
     ]
 }

@@ -13,33 +13,7 @@
               <span class="font-bold">Go Link</span>
               <Icon name="circum:export" class="text-lg" />
             </Button>
-            <DropdownMenu>
-              <DropdownMenuTrigger>
-                <Button variant="ghost" class="mb-1" size="sm">
-                  <Icon name="circum:menu-kebab" class="text-xl" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem>
-                  <div class="hover:text-yellow-500 flex justify-center">
-                    <Icon name="circum:star" class="text-xl mr-2 " />
-                    <span class="font-semibold">Favorite</span>
-                  </div>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <div class="hover:text-green-500 flex justify-center">
-                    <Icon name="circum:link" class="text-xl mr-2 " />
-                    <span class="font-semibold">Shared</span>
-                  </div>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <div class="hover:text-red-600 flex justify-center">
-                    <Icon name="material-symbols-light:delete-outline" class="text-xl mr-2 " />
-                    <span class="font-semibold">Delete</span>
-                  </div>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <DropdownParameters />
           </div>
           </transition> 
         
@@ -92,6 +66,7 @@
 </template>
   
 <script lang="ts" setup>
+import DropdownParameters from './DropdownParameters.vue';
 const showButtons = ref(false)
 
 defineProps({
