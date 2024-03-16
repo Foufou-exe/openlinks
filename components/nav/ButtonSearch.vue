@@ -1,5 +1,5 @@
 <template>
-  <TooltipProvider :delay-duration="200">
+  <TooltipProvider :delay-duration="0">
     <Tooltip>
       <TooltipTrigger as-child>
         <Button type="button" variant="ghost" @click="handleOpenChange" class="p-2">

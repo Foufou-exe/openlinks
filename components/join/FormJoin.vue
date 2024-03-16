@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-black">
+  <div class="min-h-screen">
     <nav class="flex p-2">
       <a class="flex items-center text-lg font-medium space-x-2" href="/">
         <NuxtImg src="/icon.png" class="w-[40px]" />
@@ -7,16 +7,21 @@
       </a>
     </nav>
 
-    <main class="">
-      <div class="flex space-x-2">
-        <NuxtImg src="/images/profile/user1.png" class="w-12 h-12 rounded-lg"/>
-        <span class="flex justify-center items-center font-medium">
-          ./Foufou-exe invited you to join Openlinks
-        </span>
-      </div>
-      <div>
-        <h1 class="text-4xl font-bold text-white">Join</h1>
-        <p class="text-gray-500">Join the community and share your links</p>
+    <main class="p-5 grid grid-cols-1 md:grid-cols-2">
+      <div class="flex flex-col justify-center">
+        <div class="mb-4">
+          <NuxtImg src="/images/profile/user1.png" class="w-20 h-20 rounded-xl border-2 border-white"/>
+        </div>
+        <div>
+          <h2 class="text-xl font-semibold mb-2">You're Invited!</h2>
+          <p class="text-lg font-medium mb-4">./Foufou-exe invited you to join Openlinks</p>
+          <p class="text-gray-400 mb-5">Join the community and share your links.</p>
+        </div>
+        <div>
+          <Button>
+            <span class="text-lg font-bold">Join now</span>
+          </Button>
+        </div>
       </div>
     </main>
   </div>

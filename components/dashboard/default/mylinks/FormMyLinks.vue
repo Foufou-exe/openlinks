@@ -15,7 +15,7 @@
 
         <DropdownMenu>
           <DropdownMenuTrigger as="button">
-            <TooltipProvider :delay-duration="200">
+            <TooltipProvider :delay-duration="0">
               <Tooltip>
                 <TooltipTrigger as-child>
                   <Button variant="secondary">
@@ -52,7 +52,7 @@
 
         <Tabs default-value="grid">
           <TabsList>
-            <TooltipProvider :delay-duration="200">
+            <TooltipProvider :delay-duration="0">
               <Tooltip>
                 <TooltipTrigger as-child>
                   <TabsTrigger value="grid" @click="setViewMode('grid')">
@@ -65,7 +65,7 @@
               </Tooltip>
             </TooltipProvider>
 
-            <TooltipProvider :delay-duration="200">
+            <TooltipProvider :delay-duration="0">
               <Tooltip>
                 <TooltipTrigger as-child>
                   <TabsTrigger value="line" @click="setViewMode('line')">

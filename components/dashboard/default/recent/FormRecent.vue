@@ -15,7 +15,7 @@
     <div class="flex justify-center items-center space-x-2">
       <Tabs default-value="grid">
         <TabsList>
-          <TooltipProvider :delay-duration="200">
+          <TooltipProvider :delay-duration="0">
             <Tooltip>
               <TooltipTrigger as-child>
                 <TabsTrigger value="grid" @click="setViewMode('grid')">
@@ -28,7 +28,7 @@
             </Tooltip>
           </TooltipProvider>
 
-          <TooltipProvider :delay-duration="200">
+          <TooltipProvider :delay-duration="0">
             <Tooltip>
               <TooltipTrigger as-child>
                 <TabsTrigger value="line" @click="setViewMode('line')">

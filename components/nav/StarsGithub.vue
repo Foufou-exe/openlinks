@@ -9,9 +9,6 @@
 
 <script setup lang="ts">
 defineProps<{ title?: string; size?: string; }>()
-
-import { defineProps, ref } from 'vue'
-
 const NumberStars = ref(0)
 
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <TooltipProvider :delay-duration="200">
+  <TooltipProvider :delay-duration="0">
     <Tooltip>
       <TooltipTrigger as-child>
         <Button @click="toggleTheme" variant="ghost" :class="colorMode.preference === 'dark' ? 'theme-light' : 'theme-dark' " class="p-2">
@@ -19,9 +19,7 @@
 </template>
   
 <script setup>
-import { computed } from 'vue';
 import { useOsStore } from '@/stores/osStore.js';
-import { watch } from 'vue'
 import { useMagicKeys } from '@vueuse/core'
 const keys = useMagicKeys()
 
