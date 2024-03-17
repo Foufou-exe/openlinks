@@ -9,7 +9,7 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-  // Configuration Style Perso
+  // Custom Style Configuration
   css: [
     '~/assets/css/global.css',
     '~/assets/css/themes.css',
@@ -23,7 +23,10 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'nuxt-typed-router',
     '@pinia/nuxt',
+    // '@vue-email/nuxt',
+    // '@nuxtjs/eslint-module',
   ],
+
 
   // Configuration store PINIA
   pinia: {
